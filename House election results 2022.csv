@@ -1,0 +1,436 @@
+﻿year,state,district,candidatedem,dem_votes,candidategop,gop_votes,totalvotes,uncontested,dem_share,gop_share,dseat,competition,delegation_size,def_inc,open,vap,turnout,rd_auth
+2022,1.  Alabama,1,,0.25,Jerry L. Carl,0.75,1,1,0.25,0.75,0,0,7,0,0,557646,1.79E-06,6. Legislative trifecta R
+2022,1.  Alabama,2,Phyllis Harvey-Hall,58014,Barry Moore,137460,195474,0,0.2967863,0.7032137,0,0.5935726,7,0,0,552577,0.3537498,6. Legislative trifecta R
+2022,1.  Alabama,3,Lin Veasey,47859,Mike Rogers,135602,183461,0,0.2608674,0.7391325,0,0.5217349,7,0,0,566409,0.323902,6. Legislative trifecta R
+2022,1.  Alabama,4,Rick Neighbors,26694,Robert B. Aderholt,164655,191349,0,0.1395043,0.8604957,0,0.2790085,7,0,0,556166,0.3440502,6. Legislative trifecta R
+2022,1.  Alabama,5,Kathy Warner-Stanton,62740,Dale Strong,142435,205175,0,0.3057877,0.6942123,0,0.6115755,7,0,1,565773,0.3626454,6. Legislative trifecta R
+2022,1.  Alabama,6,,0.25,Gary J. Palmer,0.75,1,1,0.25,0.75,0,0,7,0,0,545446,1.83E-06,6. Legislative trifecta R
+2022,1.  Alabama,7,Terri A. Sewell,123233,Beatrice Nichols,67416,190649,0,0.6463868,0.3536132,1,0.7072264,7,0,0,573433,0.3324695,6. Legislative trifecta R
+2022,2.  Alaska,0,Mary Peltola,137263,Sarah Palin,112471,249734,0,0.5496368,0.4503632,1,0.9007264,1,0,0,555483,0.4495799,1. At-large
+2022,3.  Arizona,1,Jevin Hodge,179141,David Schweikert,182336,361477,0,0.4955806,0.5044193,0,0.9911613,9,0,0,648296,0.5575802,2. Independent commission
+2022,3.  Arizona,2,Tom Oâ€™Halleran,149151,Eli Crane,174169,323320,0,0.4613108,0.5386893,0,0.9226215,9,1,0,632786,0.5109468,2. Independent commission
+2022,3.  Arizona,3,Ruben Gallego,108599,Jeff Zink,32475,141074,0,0.7698017,0.2301983,1,0.4603967,9,0,0,580760,0.2429127,2. Independent commission
+2022,3.  Arizona,4,Greg Stanton,148941,Kelly Cooper,116521,265462,0,0.5610633,0.4389367,1,0.8778733,9,0,0,637428,0.416458,2. Independent commission
+2022,3.  Arizona,5,Javier Ramos,120243,Andy Biggs,182464,302707,0,0.3972257,0.6027743,0,0.7944514,9,0,0,584506,0.5178852,2. Independent commission
+2022,3.  Arizona,6,Kirsten Engel,171969,Juan Ciscomani,177201,349170,0,0.4925079,0.5074921,0,0.9850159,9,0,1,635024,0.5498532,2. Independent commission
+2022,3.  Arizona,7,RaÃºl M. Grijalva,126418,Luis Pozzolo,69444,195862,0,0.6454442,0.3545558,1,0.7091115,9,0,0,612770,0.3196338,2. Independent commission
+2022,3.  Arizona,8,,0.25,Debbie Lesko,0.75,1,1,0.25,0.75,0,0,9,0,0,622593,1.61E-06,2. Independent commission
+2022,3.  Arizona,9,,0.25,Paul Gosar,0.75,1,1,0.25,0.75,0,0,9,0,0,624656,1.60E-06,2. Independent commission
+2022,4.  Arkansas,1,Monte Hodges,54598,Eric A. â€œRickâ€ Crawford,153774,208372,0,0.2620218,0.7379782,0,0.5240436,4,0,0,580211,0.3591314,6. Legislative trifecta R
+2022,4.  Arkansas,2,Quintessa Hathaway,86887,J. French Hill,147975,234862,0,0.3699492,0.6300508,0,0.7398983,4,0,0,582142,0.4034445,6. Legislative trifecta R
+2022,4.  Arkansas,3,Lauren Mallett-Hays,73541,Steve Womack,142401,215942,0,0.340559,0.659441,0,0.6811181,4,0,0,572926,0.3769108,6. Legislative trifecta R
+2022,4.  Arkansas,4,John White,56745,Bruce Westerman,153850,210595,0,0.2694508,0.7305492,0,0.5389017,4,0,0,586122,0.3593023,6. Legislative trifecta R
+2022,5.  California,1,Max Steiner,93386,Doug LaMalfa,152839,246225,0,0.379271,0.620729,0,0.758542,52,0,0,593469,0.4148911,2. Independent commission
+2022,5.  California,2,Jared Huffman,229720,Douglas Brower,79029,308749,0,0.7440348,0.2559652,1,0.5119304,52,0,0,615421,0.5016875,2. Independent commission
+2022,5.  California,3,Kermit Jones,156761,Kevin Kiley,181438,338199,0,0.463517,0.5364829,0,0.9270341,52,0,1,607120,0.5570546,2. Independent commission
+2022,5.  California,4,Mike Thompson,176900,Matt Brock,84007,260907,0,0.6780193,0.3219807,1,0.6439613,52,0,0,611807,0.4264531,2. Independent commission
+2022,5.  California,5,Michael J. â€œMikeâ€ Barkley,109506,Tom McClintock,173524,283030,0,0.386906,0.613094,0,0.7738119,52,0,0,595445,0.4753252,2. Independent commission
+2022,5.  California,6,Ami Bera,121058,Tamika Hamilton,95325,216383,0,0.5594617,0.4405383,1,0.8810766,52,0,0,578125,0.3742841,2. Independent commission
+2022,5.  California,7,Doris O. Matsui,150618,Max Semenenko,70033,220651,0,0.6826074,0.3173926,1,0.6347852,52,0,0,579679,0.3806434,2. Independent commission
+2022,5.  California,8,John Garamendi,145501,Rudy Recile,46634,192135,0,0.7572852,0.2427148,1,0.4854295,52,0,0,586587,0.3275473,2. Independent commission
+2022,5.  California,9,Josh Harder,95598,Tom Patti,78802,174400,0,0.5481537,0.4518463,1,0.9036927,52,0,0,561024,0.3108601,2. Independent commission
+2022,5.  California,10,Mark DeSaulnier,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,0,584495,1.71E-06,2. Independent commission
+2022,5.  California,11,Nancy Pelosi,220848,John Dennis,42217,263065,0,0.8395187,0.1604813,1,0.3209625,52,0,0,639493,0.4113649,2. Independent commission
+2022,5.  California,12,Barbara Lee,217110,Stephen Slauson,22859,239969,0,0.9047419,0.0952581,1,0.1905163,52,0,0,614082,0.3907768,2. Independent commission
+2022,5.  California,13,Adam Gray,66496,John Duarte,67060,133556,0,0.4978885,0.5021114,0,0.9957771,52,0,1,543745,0.2456225,2. Independent commission
+2022,5.  California,14,Eric Swalwell,137612,Alison Hayden,60852,198464,0,0.6933852,0.3066148,1,0.6132296,52,0,0,593749,0.3342557,2. Independent commission
+2022,5.  California,15,Kevin Mullin,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,1,606693,1.65E-06,2. Independent commission
+2022,5.  California,16,Anna G. Eshoo,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,0,587122,1.70E-06,2. Independent commission
+2022,5.  California,17,Ro Khanna,127853,Ritesh Tandon,52400,180253,0,0.7092975,0.2907025,1,0.581405,52,0,0,601248,0.2997981,2. Independent commission
+2022,5.  California,18,Zoe Lofgren,99776,Peter Hernandez,51737,151513,0,0.658531,0.341469,1,0.6829381,52,0,0,564797,0.268261,2. Independent commission
+2022,5.  California,19,Jimmy Panetta,194494,Jeff Gorman,88816,283310,0,0.686506,0.313494,1,0.6269881,52,0,0,605974,0.4675283,2. Independent commission
+2022,5.  California,20,Marisa Wood,74934,Kevin McCarthy,153847,228781,0,0.3275359,0.6724641,0,0.6550719,52,0,0,560026,0.4085185,2. Independent commission
+2022,5.  California,21,Jim Costa,68074,Michael Maher,57573,125647,0,0.5417877,0.4582123,1,0.9164246,52,0,0,533990,0.2352984,2. Independent commission
+2022,5.  California,22,Rudy Salas,49862,David G. Valadao,52994,102856,0,0.4847748,0.5152252,0,0.9695497,52,0,0,540901,0.1901568,2. Independent commission
+2022,5.  California,23,Derek Marshall,65908,Jay Obernolte,103197,169105,0,0.389746,0.610254,0,0.779492,52,0,0,554608,0.3049091,2. Independent commission
+2022,5.  California,24,Salud O. Carbajal,159019,Brad Allen,103533,262552,0,0.6056667,0.3943333,1,0.7886666,52,0,0,607725,0.4320244,2. Independent commission
+2022,5.  California,25,Raul Ruiz,87641,Brian E. Hawkins,65101,152742,0,0.5737845,0.4262155,1,0.8524309,52,0,0,572275,0.2669032,2. Independent commission
+2022,5.  California,26,Julia Brownley,134575,Matt Jacobs,112214,246789,0,0.5453039,0.4546961,1,0.9093922,52,0,0,585217,0.4217051,2. Independent commission
+2022,5.  California,27,Christy Smith,91892,Mike Garcia,104624,196516,0,0.4676057,0.5323943,0,0.9352114,52,0,0,553506,0.3550386,2. Independent commission
+2022,5.  California,28,Judy Chu,150062,Wes Hallman,76495,226557,0,0.6623587,0.3376413,1,0.6752826,52,0,0,605573,0.3741201,2. Independent commission
+2022,5.  California,29,Tony CÃ¡rdenas,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,0,581602,1.72E-06,2. Independent commission
+2022,5.  California,30,Adam B. Schiff,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,0,634638,1.58E-06,2. Independent commission
+2022,5.  California,31,Grace F. Napolitano,91472,Daniel Bocic Martinez,62153,153625,0,0.5954239,0.4045761,1,0.8091521,52,0,0,591460,0.2597386,2. Independent commission
+2022,5.  California,32,Brad Sherman,167411,Lucie Lapointe Volotzky,74618,242029,0,0.6916981,0.3083019,1,0.6166038,52,0,0,617884,0.3917062,2. Independent commission
+2022,5.  California,33,Pete Aguilar,76588,John Mark Porter,56119,132707,0,0.577121,0.422879,1,0.845758,52,0,0,555825,0.2387568,2. Independent commission
+2022,5.  California,34,Jimmy Gomez,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,0,616015,1.62E-06,2. Independent commission
+2022,5.  California,35,Norma J. Torres,75121,Mike Cargile,55832,130953,0,0.5736486,0.4263514,1,0.8527029,52,0,0,576050,0.2273292,2. Independent commission
+2022,5.  California,36,Ted Lieu,194299,Joe E. Collins III,84264,278563,0,0.6975047,0.3024953,1,0.6049906,52,0,0,609440,0.4570803,2. Independent commission
+2022,5.  California,37,Sydney Kamlager,0.75,,0.25,1,1,0.75,0.25,1,0,52,0,1,590475,1.69E-06,2. Independent commission
+2022,5.  California,38,Linda T. SÃ¡nchez,101260,Eric J. Ching,73051,174311,0,0.5809157,0.4190843,1,0.8381686,52,0,0,594482,0.2932149,2. Independent commission
+2022,5.  California,39,Mark Takano,75896,Aja Smith,55701,131597,0,0.5767305,0.4232695,1,0.8465391,52,0,0,564069,0.2332995,2. Independent commission
+2022,5.  California,40,Asif Mahmood,122722,Young Kim,161589,284311,0,0.431647,0.5683529,0,0.8632941,52,0,0,594890,0.477922,2. Independent commission
+2022,5.  California,41,Will Rollins,112769,Ken Calvert,123869,236638,0,0.4765465,0.5234535,0,0.9530929,52,0,0,595116,0.3976334,2. Independent commission
+2022,5.  California,42,Robert Garcia,99217,John Briscoe,45903,145120,0,0.6836894,0.3163106,1,0.6326213,52,0,1,583084,0.2488835,2. Independent commission
+2022,5.  California,43,Maxine Waters,95462,Omar Navarro,27985,123447,0,0.7733035,0.2266965,1,0.453393,52,0,0,560233,0.2203494,2. Independent commission
+2022,5.  California,44,Nanette Diaz BarragÃ¡n,100160,Paul Jones,38554,138714,0,0.7220612,0.2779388,1,0.5558776,52,0,0,580035,0.2391476,2. Independent commission
+2022,5.  California,45,Jay F. Chen,103466,Michelle Steel,113960,217426,0,0.4758677,0.5241324,0,0.9517353,52,0,0,594441,0.3657655,2. Independent commission
+2022,5.  California,46,J. Luis Correa,78041,Christopher J. Gonzales,48257,126298,0,0.6179116,0.3820884,1,0.7641768,52,0,0,580838,0.217441,2. Independent commission
+2022,5.  California,47,Katie Porter,137374,Scott Baugh,128261,265635,0,0.5171533,0.4828467,1,0.9656935,52,0,0,608883,0.4362661,2. Independent commission
+2022,5.  California,48,Stephen Houlahan,101900,Darrell Issa,155171,257071,0,0.3963886,0.6036115,0,0.7927771,52,0,0,581783,0.4418675,2. Independent commission
+2022,5.  California,49,Mike Levin,153541,Brian Maryott,138194,291735,0,0.526303,0.473697,1,0.947394,52,0,0,589514,0.4948737,2. Independent commission
+2022,5.  California,50,Scott H. Peters,168816,Corey Gustafson,99819,268635,0,0.6284215,0.3715785,1,0.7431571,52,0,0,601878,0.446328,2. Independent commission
+2022,5.  California,51,Sara Jacobs,144186,Stan Caplan,88886,233072,0,0.6186329,0.3813671,1,0.7627342,52,0,0,606891,0.3840426,2. Independent commission
+2022,5.  California,52,Juan Vargas,100686,Tyler Geffeney,50330,151016,0,0.666724,0.333276,1,0.6665519,52,0,0,588112,0.256781,2. Independent commission
+2022,6.  Colorado,1,Diana DeGette,226929,Jennifer Qualteri,49530,276459,0,0.8208414,0.1791586,1,0.3583171,8,0,0,583209,0.4740308,2. Independent commission
+2022,6.  Colorado,2,Joe Neguse,244107,Marshall Dawson,97700,341807,0,0.7141662,0.2858338,1,0.5716676,8,0,0,588213,0.5810939,2. Independent commission
+2022,6.  Colorado,3,Adam Frisch,163293,Lauren Boebert,163839,327132,0,0.4991655,0.5008345,0,0.998331,8,0,0,571693,0.5722162,2. Independent commission
+2022,6.  Colorado,4,Ike McCorkle,129619,Ken Buck,216024,345643,0,0.3750083,0.6249917,0,0.7500166,8,0,0,552117,0.6260322,2. Independent commission
+2022,6.  Colorado,5,David Torres,111978,Doug Lamborn,155528,267506,0,0.4186,0.5814,0,0.8371999,8,0,0,551909,0.4846922,2. Independent commission
+2022,6.  Colorado,6,Jason Crow,170140,. Steven Monahan,105084,275224,0,0.6181874,0.3818126,1,0.7636253,8,0,0,556669,0.4944123,2. Independent commission
+2022,6.  Colorado,7,Brittany Pettersen,204984,Erik Aadland,150510,355494,0,0.5766173,0.4233827,1,0.8467653,8,0,1,586941,0.6056725,2. Independent commission
+2022,6.  Colorado,8,Yadira Caraveo,114377,Barbara Kirkmeyer,112745,227122,0,0.5035928,0.4964072,1,0.9928144,8,0,1,538729,0.4215886,2. Independent commission
+2022,7.  Connecticut,1,John B. Larson,149556,Larry Lazor,91506,241062,0,0.6204047,0.3795953,1,0.7591906,5,0,0,571644,0.4216995,4. Court-drawn
+2022,7.  Connecticut,2,Joe Courtney,165946,Mike France,114506,280452,0,0.5917091,0.4082909,1,0.8165818,5,0,0,585912,0.4786589,4. Court-drawn
+2022,7.  Connecticut,3,Rosa L. DeLauro,137924,Lesley DeNardis,98704,236628,0,0.5828727,0.4171273,1,0.8342546,5,0,0,585128,0.4044038,4. Court-drawn
+2022,7.  Connecticut,4,James A. Himes,140262,Jayme Stevenson,95822,236084,0,0.5941191,0.4058809,1,0.8117619,5,0,0,558203,0.4229358,4. Court-drawn
+2022,7.  Connecticut,5,Jahana Hayes,127838,George Logan,125834,253672,0,0.50395,0.49605,1,0.9921001,5,0,0,567553,0.4469574,4. Court-drawn
+2022,8.  Delaware,0,Lisa Blunt Rochester,178416,Lee Murphy,138201,316617,0,0.5635073,0.4364927,1,0.8729854,1,0,0,786933,0.402343,1. At-large
+2022,9.  Florida,1,Rebekah Jones,93467,Matt Gaetz,197349,290816,0,0.3213957,0.6786044,0,0.6427913,28,0,0,606326,0.4796364,6. Legislative trifecta R
+2022,9.  Florida,2,"Al Lawson, Jr.",121153,Neal P. Dunn,180236,301389,0,0.4019822,0.5980178,0,0.8039643,28,1,0,626061,0.4814052,6. Legislative trifecta R
+2022,9.  Florida,3,Danielle Hawk,103382,Kat Cammack,178101,281483,0,0.3672762,0.6327238,0,0.7345523,28,0,0,623780,0.4512537,6. Legislative trifecta R
+2022,9.  Florida,4,LaShonda â€œLJâ€ Holloway,108402,Aaron Bean,165696,274098,0,0.3954863,0.6045137,0,0.7909726,28,0,1,594099,0.4613675,6. Legislative trifecta R
+2022,9.  Florida,5,,0.25,John H. Rutherford,0.75,1,1,0.25,0.75,0,0,28,0,0,606679,1.65E-06,6. Legislative trifecta R
+2022,9.  Florida,6,,0.25,Michael Waltz,0.75,1,1,0.25,0.75,0,0,28,0,0,640532,1.56E-06,6. Legislative trifecta R
+2022,9.  Florida,7,Karen Green,126079,Cory Mills,177966,304045,0,0.4146722,0.5853279,0,0.8293443,28,0,1,620563,0.4899503,6. Legislative trifecta R
+2022,9.  Florida,8,Joanne Terry,102080,Bill Posey,222128,324208,0,0.3148596,0.6851404,0,0.6297192,28,0,0,638173,0.5080252,6. Legislative trifecta R
+2022,9.  Florida,9,Darren Soto,108541,Scotty Moore,93827,202368,0,0.5363545,0.4636455,1,0.9272909,28,0,0,583715,0.3466897,6. Legislative trifecta R
+2022,9.  Florida,10,Maxwell Alejandro Frost,117955,Calvin B. Wimbish,78844,196799,0,0.5993679,0.4006321,1,0.8012642,28,0,1,626499,0.314125,6. Legislative trifecta R
+2022,9.  Florida,11,Shante Munns,115647,Daniel Webster,205995,321642,0,0.3595519,0.6404481,0,0.7191039,28,0,0,620805,0.5181047,6. Legislative trifecta R
+2022,9.  Florida,12,Kimberly Walker,95390,Gus M. Bilirakis,226601,321991,0,0.2962505,0.7037495,0,0.592501,28,0,0,628206,0.5125564,6. Legislative trifecta R
+2022,9.  Florida,13,Eric Lynn,153876,Anna Paulina Luna,181487,335363,0,0.4588342,0.5411658,0,0.9176683,28,0,1,648671,0.5170001,6. Legislative trifecta R
+2022,9.  Florida,14,Kathy Castor,149737,James Judge,113427,263164,0,0.5689874,0.4310126,1,0.8620252,28,0,0,622246,0.422926,6. Legislative trifecta R
+2022,9.  Florida,15,Alan M. Cohn,102835,Laurel Lee,145219,248054,0,0.414567,0.585433,0,0.829134,28,0,1,616574,0.4023102,6. Legislative trifecta R
+2022,9.  Florida,16,Jan Schneider,115575,Vern Buchanan,189762,305337,0,0.3785162,0.6214838,0,0.7570324,28,0,0,613665,0.497563,6. Legislative trifecta R
+2022,9.  Florida,17,Andrea Doria Kale,123798,W. Gregory Steube,222483,346281,0,0.3575073,0.6424927,0,0.7150147,28,0,0,668192,0.5182358,6. Legislative trifecta R
+2022,9.  Florida,18,,0.25,C. Scott Franklin,0.75,1,1,0.25,0.75,0,0,28,0,0,614480,1.63E-06,6. Legislative trifecta R
+2022,9.  Florida,19,Cindy Banyai,100226,Byron Donalds,213035,313261,0,0.3199441,0.6800559,0,0.6398882,28,0,0,655248,0.4780801,6. Legislative trifecta R
+2022,9.  Florida,20,Sheila Cherfilus-McCormick,136215,Drew Montez Clark,52151,188366,0,0.7231401,0.2768599,1,0.5537199,28,0,0,598014,0.3149859,6. Legislative trifecta R
+2022,9.  Florida,21,Corinna Balderramos Robinson,119891,Brian J. Mast,208614,328505,0,0.3649594,0.6350405,0,0.7299189,28,0,0,635159,0.5172012,6. Legislative trifecta R
+2022,9.  Florida,22,Lois Frankel,150010,Dan Franzese,122194,272204,0,0.5510941,0.4489059,1,0.8978119,28,0,0,630374,0.4318135,6. Legislative trifecta R
+2022,9.  Florida,23,Jared Moskowitz,143591,Joe Budd,130681,274272,0,0.523535,0.476465,1,0.9529299,28,0,1,620582,0.4419593,6. Legislative trifecta R
+2022,9.  Florida,24,Frederica S. Wilson,133442,Jesus G. Navarro,52449,185891,0,0.7178508,0.2821492,1,0.5642985,28,0,0,613103,0.303197,6. Legislative trifecta R
+2022,9.  Florida,25,Debbie Wasserman Schultz,129113,Carla Spalding,105239,234352,0,0.5509362,0.4490638,1,0.8981276,28,0,0,603774,0.3881452,6. Legislative trifecta R
+2022,9.  Florida,26,Christine Alexandria Olivo,58868,Mario Diaz-Balart,143240,202108,0,0.29127,0.70873,0,0.58254,28,0,0,626501,0.322598,6. Legislative trifecta R
+2022,9.  Florida,27,Annette Taddeo,101404,Maria Elvira Salazar,136038,237442,0,0.4270685,0.5729315,0,0.854137,28,0,0,617756,0.3843621,6. Legislative trifecta R
+2022,9.  Florida,28,Robert Asencio,76665,Carlos A. Gimenez,134457,211122,0,0.3631313,0.6368687,0,0.7262626,28,0,0,599323,0.3522675,6. Legislative trifecta R
+2022,10.  Georgia,1,Wade Herring,107837,Earl L. â€œBuddyâ€ Carter,156128,263965,0,0.4085276,0.5914724,0,0.8170553,14,0,0,590831,0.446769,6. Legislative trifecta R
+2022,10.  Georgia,2,"Sanford D. Bishop, Jr",132675,Chris West,108665,241340,0,0.5497431,0.4502569,1,0.9005138,14,0,0,579138,0.4167228,6. Legislative trifecta R
+2022,10.  Georgia,3,Val Almonord,97057,A. Drew Ferguson IV,213524,310581,0,0.3125014,0.6874986,0,0.6250028,14,0,0,587024,0.5290772,6. Legislative trifecta R
+2022,10.  Georgia,4,"Henry C. â€œHankâ€ Johnson, Jr.",216332,Jonathan Chavez,59302,275634,0,0.7848524,0.2151476,1,0.4302953,14,0,0,585592,0.4706929,6. Legislative trifecta R
+2022,10.  Georgia,5,Nikema Williams,243687,Christian Zimm,51769,295456,0,0.8247827,0.1752173,1,0.3504346,14,0,0,612372,0.482478,6. Legislative trifecta R
+2022,10.  Georgia,6,Bob Christian,125612,Rich McCormick,206886,332498,0,0.3777827,0.6222173,0,0.7555655,14,0,1,576852,0.5764009,6. Legislative trifecta R
+2022,10.  Georgia,7,Lucy McBath,143063,Mark Gonsalves,91962,235025,0,0.608714,0.391286,1,0.7825721,14,0,0,563688,0.4169416,6. Legislative trifecta R
+2022,10.  Georgia,8,Darrius Butler,81886,Austin Scott,178700,260586,0,0.3142379,0.685762,0,0.6284758,14,0,0,586876,0.4440222,6. Legislative trifecta R
+2022,10.  Georgia,9,Michael â€œMikeâ€ Ford,81318,Andrew S. Clyde,212820,294138,0,0.2764621,0.7235379,0,0.5529242,14,0,0,594095,0.4951026,6. Legislative trifecta R
+2022,10.  Georgia,10,Tabitha Johnson-Green,109107,Mike Collins,198523,307630,0,0.3546696,0.6453304,0,0.7093391,14,0,1,592891,0.5188643,6. Legislative trifecta R
+2022,10.  Georgia,11,Antonio Daza,113571,Barry Loudermilk,190086,303657,0,0.3740108,0.6259892,0,0.7480216,14,0,0,597701,0.5080416,6. Legislative trifecta R
+2022,10.  Georgia,12,Elizabeth â€œLizâ€ Johnson,107148,Rick W. Allen,158047,265195,0,0.4040348,0.5959653,0,0.8080695,14,0,0,587794,0.45117,6. Legislative trifecta R
+2022,10.  Georgia,13,David Scott,216388,Caesar Gonzales,48228,264616,0,0.8177434,0.1822566,1,0.3645131,14,0,0,569970,0.464263,6. Legislative trifecta R
+2022,10.  Georgia,14,Marcus Flowers,88189,Marjorie Taylor Greene,170162,258351,0,0.3413534,0.6586466,0,0.6827068,14,0,0,584956,0.4416589,6. Legislative trifecta R
+2022,11.  Hawaii,1,Ed Case,143546,Conrad Kress,51217,194763,0,0.7370291,0.2629709,1,0.5259418,2,0,0,581604,0.3348722,3. Other commission
+2022,11.  Hawaii,2,Jill N. Tokuda,128407,Joe Akana,72874,201281,0,0.6379489,0.3620511,1,0.7241021,2,0,1,563666,0.3570927,3. Other commission
+2022,12.  Idaho,1,Kaylee Peterson,82261,Russ Fulcher,222901,305162,0,0.269565,0.730435,0,0.53913,2,0,0,707018,0.4316184,3. Other commission
+2022,12.  Idaho,2,Wendy Norman,98736,Michael K. Simpson,172450,271186,0,0.3640896,0.6359104,0,0.7281792,2,0,0,692312,0.3917107,3. Other commission
+2022,13.  Illinois,1,Jonathan L. Jackson,159142,Eric Carlson,78258,237400,0,0.6703538,0.3296462,1,0.6592923,17,0,1,587341,0.4041945,5. Legislative trifecta D
+2022,13.  Illinois,2,Robin L. Kelly,140414,Thomas Lynch,68761,209175,0,0.6712753,0.3287247,1,0.6574495,17,0,0,575217,0.3636454,5. Legislative trifecta D
+2022,13.  Illinois,3,Delia Ramirez,121764,Justin Burau,55995,177759,0,0.6849949,0.3150051,1,0.6300103,17,0,1,580462,0.3062371,5. Legislative trifecta D
+2022,13.  Illinois,4,JesÃºs G. â€œChuyâ€ GarcÃ­a,91036,James Falakos,37352,128388,0,0.7090694,0.2909306,1,0.5818613,17,0,0,554487,0.2315437,5. Legislative trifecta D
+2022,13.  Illinois,5,Mike Quigley,190999,Tommy Hanson,79112,270111,0,0.707113,0.292887,1,0.585774,17,0,0,609416,0.4432293,5. Legislative trifecta D
+2022,13.  Illinois,6,Sean Casten,150496,Keith Pekau,126351,276847,0,0.5436071,0.4563929,1,0.9127858,17,0,0,589255,0.4698254,5. Legislative trifecta D
+2022,13.  Illinois,7,Danny K. Davis,0.75,,0.25,1,1,0.75,0.25,1,0,17,0,0,591914,1.69E-06,5. Legislative trifecta D
+2022,13.  Illinois,8,Raja Krishnamoorthi,117880,Chris Dargis,89335,207215,0,0.5688778,0.4311222,1,0.8622445,17,0,0,583396,0.3551876,5. Legislative trifecta D
+2022,13.  Illinois,9,Janice D. Schakowsky,179615,Maxwell â€œMaxâ€ Rice,70915,250530,0,0.7169401,0.2830599,1,0.5661198,17,0,0,598228,0.4187868,5. Legislative trifecta D
+2022,13.  Illinois,10,Bradley Scott Schneider,152566,Joseph Severino,89599,242165,0,0.6300085,0.3699915,1,0.7399831,17,0,0,577740,0.4191591,5. Legislative trifecta D
+2022,13.  Illinois,11,Bill Foster,149172,Catalina Lauf,115069,264241,0,0.5645301,0.4354699,1,0.8709398,17,0,0,573202,0.4609911,5. Legislative trifecta D
+2022,13.  Illinois,12,Homer â€œChipâ€ Markel,72791,Mike Bost,218379,291170,0,0.2499948,0.7500051,0,0.4999897,17,0,0,588795,0.4945185,5. Legislative trifecta D
+2022,13.  Illinois,13,Nikki Budzinski,141788,Regan Deering,108646,250434,0,0.5661691,0.4338309,1,0.8676617,17,0,1,596675,0.4197159,5. Legislative trifecta D
+2022,13.  Illinois,14,Lauren Underwood,128141,Scott R. Gryder,108451,236592,0,0.5416117,0.4583883,1,0.9167765,17,0,0,569098,0.4157315,5. Legislative trifecta D
+2022,13.  Illinois,15,Paul J. Lange,86396,Mary E. Miller,213007,299403,0,0.2885609,0.7114391,0,0.5771218,17,0,0,592579,0.5052541,5. Legislative trifecta D
+2022,13.  Illinois,16,Elizabeth â€œLisaâ€ Haderlein,100325,Darin LaHood,197621,297946,0,0.3367221,0.6632779,0,0.6734442,17,0,0,579562,0.5140882,5. Legislative trifecta D
+2022,13.  Illinois,17,Eric Sorensen,121186,Esther Joy King,111931,233117,0,0.5198506,0.4801494,1,0.9602989,17,0,1,589790,0.3952543,5. Legislative trifecta D
+2022,14.  Indiana,1,Frank J. Mrvan,112656,Jennifer-Ruth Green,100542,213198,0,0.5284102,0.4715898,1,0.9431796,9,0,0,583517,0.3653672,6. Legislative trifecta R
+2022,14.  Indiana,2,Paul D. Steury,62891,Rudolph â€œRudyâ€ Yakym III,125313,188204,0,0.334164,0.665836,0,0.668328,9,0,1,569577,0.3304277,6. Legislative trifecta R
+2022,14.  Indiana,3,Gary L. Snyder,60577,Jim Banks,131579,192156,0,0.3152491,0.6847509,0,0.6304981,9,0,0,564548,0.3403714,6. Legislative trifecta R
+2022,14.  Indiana,4,Roger D. Day,62834,James R. Baird,134864,197698,0,0.3178282,0.6821718,0,0.6356564,9,0,0,583348,0.3389023,6. Legislative trifecta R
+2022,14.  Indiana,5,Jeannine Lee Lake,93434,Victoria Spartz,146575,240009,0,0.3892937,0.6107063,0,0.7785875,9,0,0,581257,0.4129137,6. Legislative trifecta R
+2022,14.  Indiana,6,Cynthia â€œCindeâ€ Wirth,62838,Greg Pence,130686,193524,0,0.3247039,0.6752961,0,0.6494078,9,0,0,571857,0.3384133,6. Legislative trifecta R
+2022,14.  Indiana,7,AndrÃ© Carson,117309,Angela Grabovsky,53631,170940,0,0.6862583,0.3137417,1,0.6274833,9,0,0,569665,0.3000711,6. Legislative trifecta R
+2022,14.  Indiana,8,Ray McCormick,68109,Larry Bucshon,141995,210104,0,0.324168,0.675832,0,0.6483361,9,0,0,587293,0.3577499,6. Legislative trifecta R
+2022,14.  Indiana,9,Matthew Fyfe,75700,Erin Houchin,143166,218866,0,0.3458737,0.6541263,0,0.6917475,9,0,1,595880,0.3672988,6. Legislative trifecta R
+2022,15.  Iowa,1,Christina Bohannan,142173,Mariannette Miller-Meeks,162947,305120,0,0.4659576,0.5340424,0,0.9319153,4,0,0,620737,0.4915447,6. Legislative trifecta R
+2022,15.  Iowa,2,Liz Mathis,145940,Ashley Hinson,172181,318121,0,0.4587563,0.5412437,0,0.9175125,4,0,0,618302,0.5145075,6. Legislative trifecta R
+2022,15.  Iowa,3,Cynthia Axne,154117,Zach Nunn,156262,310379,0,0.4965445,0.5034555,0,0.9930891,4,1,0,603998,0.5138742,6. Legislative trifecta R
+2022,15.  Iowa,4,Ryan Melton,84230,Randy Feenstra,186467,270697,0,0.3111597,0.6888403,0,0.6223194,4,0,0,615481,0.4398137,6. Legislative trifecta R
+2022,16.  Kansas,1,James 'Jimmy' Beard,77092,Tracey Mann,161333,238425,0,0.3233386,0.6766614,0,0.6466771,4,0,0,569195,0.4188811,7. Split legislature
+2022,16.  Kansas,2,Patrick Schmidt,98852,Jake LaTurner,134506,233358,0,0.4236066,0.5763934,0,0.8472133,4,0,0,554866,0.4205664,7. Split legislature
+2022,16.  Kansas,3,Sharice Davids,165527,Amanda L. Adkins,128839,294366,0,0.562317,0.437683,1,0.875366,4,0,0,559113,0.5264875,7. Split legislature
+2022,16.  Kansas,4,Bob Hernandez,83851,Ron Estes,144889,228740,0,0.3665778,0.6334223,0,0.7331555,4,0,0,551336,0.4148831,7. Split legislature
+2022,17.  Kentucky,1,Jimmy C. Ausbrooks,61701,James Comer,184157,245858,0,0.2509619,0.7490381,0,0.5019239,6,0,0,583185,0.421578,7. Split legislature
+2022,17.  Kentucky,2,Hank Linderman,66769,Brett Guthrie,170487,237256,0,0.2814218,0.7185782,0,0.5628435,6,0,0,578443,0.4101631,7. Split legislature
+2022,17.  Kentucky,3,Morgan McGarvey,160920,Stuart N. Ray,98637,259557,0,0.6199794,0.3800206,1,0.7600411,6,0,1,582979,0.4452253,7. Split legislature
+2022,17.  Kentucky,4,Matthew Lehman,79977,Thomas Massie,167541,247518,0,0.3231159,0.6768841,0,0.6462318,6,0,0,574912,0.430532,7. Split legislature
+2022,17.  Kentucky,5,Conor Halbleib,38549,Harold Rogers,177712,216261,0,0.1782522,0.8217478,0,0.3565044,6,0,0,585442,0.3693978,7. Split legislature
+2022,17.  Kentucky,6,Geoffrey M. â€œGeoffâ€ Young,83005,Andy Barr,154762,237767,0,0.3491023,0.6508977,0,0.6982045,6,0,0,586494,0.405404,7. Split legislature
+2022,18.  Louisiana,1,Katie Darling,61467,Steve Scalise,177670,239137,0,0.2570368,0.7429632,0,0.5140736,6,0,0,596632,0.4008116,7. Split legislature
+2022,18.  Louisiana,2,Troy A. Carter,158120,â€œDanâ€ Lux,46927,205047,0,0.7711403,0.2288597,1,0.4577194,6,0,0,596207,0.3439191,7. Split legislature
+2022,18.  Louisiana,3,Lessie Olivia LeBlanc,23641,Clay Higgins,144423,168064,0,0.1406666,0.8593333,0,0.2813333,6,0,0,582412,0.2885655,7. Split legislature
+2022,18.  Louisiana,4,,0.25,Mike Johnson,0.75,1,1,0.25,0.75,0,0,6,0,0,588687,1.70E-06,7. Split legislature
+2022,18.  Louisiana,5,Oscar â€œOmarâ€ Dantzler,35149,Julia Letlow,151080,186229,0,0.1887407,0.8112593,0,0.3774815,6,0,0,595317,0.3128233,7. Split legislature
+2022,18.  Louisiana,6,,0.25,Garret Graves,0.75,1,1,0.25,0.75,0,0,6,0,0,598714,1.67E-06,7. Split legislature
+2022,19.  Maine,1,Chellie Pingree,219753,Edwin Thelander,129263,349016,0,0.6296359,0.3703641,1,0.7407282,2,0,0,559448,0.6238578,5. Legislative trifecta D
+2022,19.  Maine,2,Jared F. Golden,165136,Bruce Poliquin,146142,311278,0,0.5305097,0.4694903,1,0.9389806,2,0,0,556685,0.5591636,5. Legislative trifecta D
+2022,20.  Maryland,1,Heather R. Mizeur,126511,Andy Harris,159673,286184,0,0.4420618,0.5579382,0,0.8841235,8,0,0,609553,0.4694981,7. Split legislature
+2022,20.  Maryland,2,C. A. Dutch Ruppersberger,158998,Nicolee Ambrose,109075,268073,0,0.5931146,0.4068854,1,0.8137709,8,0,0,606643,0.4418958,7. Split legislature
+2022,20.  Maryland,3,John P. Sarbanes,175514,Yuripzy Morgan,115801,291315,0,0.6024887,0.3975113,1,0.7950225,8,0,0,595018,0.4895902,7. Split legislature
+2022,20.  Maryland,4,Glenn F. Ivey,144168,Jeff Warner,15441,159609,0,0.9032573,0.0967427,1,0.1934853,8,0,1,590243,0.2704124,7. Split legislature
+2022,20.  Maryland,5,Steny H. Hoyer,182478,Chris Palombi,94000,276478,0,0.6600091,0.3399909,1,0.6799818,8,0,0,598691,0.4618042,7. Split legislature
+2022,20.  Maryland,6,David J. Trone,140295,Neil C. Parrott,115771,256066,0,0.5478861,0.4521139,1,0.9042278,8,0,0,603585,0.4242418,7. Split legislature
+2022,20.  Maryland,7,Kweisi Mfume,151640,Scott M. Collier,32737,184377,0,0.8224453,0.1775547,1,0.3551094,8,0,0,603013,0.3057596,7. Split legislature
+2022,20.  Maryland,8,Jamie Raskin,211842,Gregory Thomas Coll,47965,259807,0,0.8153822,0.1846178,1,0.3692356,8,0,0,594667,0.4368949,7. Split legislature
+2022,21.  Massachusetts,1,Richard E. Neal,157635,Dean James Martilli,98386,256021,0,0.6157112,0.3842888,1,0.7685776,9,0,0,623059,0.4109097,7. Split legislature
+2022,21.  Massachusetts,2,James P. McGovern,180639,Jeffrey A. Sossa-Paquette,91956,272595,0,0.6626644,0.3373356,1,0.6746712,9,0,0,617591,0.4413843,7. Split legislature
+2022,21.  Massachusetts,3,Lori Trahan,154496,Dean A. Tran,88585,243081,0,0.6355742,0.3644258,1,0.7288517,9,0,0,607351,0.4002315,7. Split legislature
+2022,21.  Massachusetts,4,Jake Auchincloss,0.75,,0.25,1,1,0.75,0.25,1,0,9,0,0,612796,1.63E-06,7. Split legislature
+2022,21.  Massachusetts,5,Katherine M. Clark,203994,Caroline Colarusso,71491,275485,0,0.7404904,0.2595096,1,0.5190192,9,0,0,626902,0.4394387,7. Split legislature
+2022,21.  Massachusetts,6,Seth Moulton,198119,Bob May,110770,308889,0,0.6413922,0.3586078,1,0.7172156,9,0,0,620317,0.4979535,7. Split legislature
+2022,21.  Massachusetts,7,Ayanna Pressley,151825,"Donnie Dionicio Palmer, Jr",27129,178954,0,0.8484024,0.1515976,1,0.3031952,9,0,0,645749,0.2771263,7. Split legislature
+2022,21.  Massachusetts,8,Stephen F. Lynch,189987,Robert G. Burke,82126,272113,0,0.6981916,0.3018084,1,0.6036169,9,0,0,627256,0.4338149,7. Split legislature
+2022,21.  Massachusetts,9,William R. Keating,197823,Jesse G. Brown,136347,334170,0,0.5919831,0.4080169,1,0.8160338,9,0,0,636168,0.5252858,7. Split legislature
+2022,22.  Michigan,1,Bob Lorinser,145403,Jack Bergman,233094,378497,0,0.3841589,0.6158411,0,0.7683178,13,0,0,636943,0.59424,2. Independent commission
+2022,22.  Michigan,2,Jerry Hilliard,116452,John R. Moolenaar,216222,332674,0,0.3500484,0.6499516,0,0.7000968,13,0,0,614611,0.5412757,2. Independent commission
+2022,22.  Michigan,3,Hillary Scholten,185989,John Gibbs,142229,328218,0,0.566663,0.433337,1,0.866674,13,0,1,594988,0.551638,2. Independent commission
+2022,22.  Michigan,4,Joseph Alfonso,143690,Bill Huizenga,183936,327626,0,0.4385794,0.5614207,0,0.8771587,13,0,0,595889,0.5498105,2. Independent commission
+2022,22.  Michigan,5,Bart Goldberg,110946,Tim Walberg,198020,308966,0,0.3590881,0.6409119,0,0.7181761,13,0,0,608676,0.5076034,2. Independent commission
+2022,22.  Michigan,6,Debbie Dingell,241759,Whittney Williams,125167,366926,0,0.6588767,0.3411233,1,0.6822466,13,0,0,615250,0.5963852,2. Independent commission
+2022,22.  Michigan,7,Elissa Slotkin,192809,Tom Barrett,172624,365433,0,0.5276179,0.4723821,1,0.9447641,13,0,0,613661,0.5954965,2. Independent commission
+2022,22.  Michigan,8,Daniel T. Kildee,178322,Paul Junge,143850,322172,0,0.5534994,0.4465006,1,0.8930013,13,0,0,606578,0.5311304,2. Independent commission
+2022,22.  Michigan,9,Brian Jaye,123702,Lisa McClain,238300,362002,0,0.3417163,0.6582837,0,0.6834327,13,0,0,606390,0.5969788,2. Independent commission
+2022,22.  Michigan,10,Carl J. Marlinga,157602,John James,159202,316804,0,0.4974748,0.5025252,0,0.9949496,13,0,1,616429,0.5139343,2. Independent commission
+2022,22.  Michigan,11,Haley M. Stevens,224537,Mark Ambrose,141642,366179,0,0.6131892,0.3868108,1,0.7736216,13,0,0,624331,0.5865142,2. Independent commission
+2022,22.  Michigan,12,Rashida Tlaib,196643,Steven Elliott,72888,269531,0,0.7295747,0.2704253,1,0.5408506,13,0,0,586408,0.4596305,2. Independent commission
+2022,22.  Michigan,13,Shri Thanedar,166650,Martell D. Bivings,56187,222837,0,0.7478561,0.2521439,1,0.5042879,13,0,1,588303,0.3787793,2. Independent commission
+2022,23.  Minnesota,1,Jeff Ettinger,125457,Brad Finstad,159621,285078,0,0.4400796,0.5599204,0,0.8801591,8,0,0,551144,0.5172477,4. Court-drawn
+2022,23.  Minnesota,2,Angie Craig,165583,Tyler Kistner,148576,314159,0,0.5270675,0.4729325,1,0.945865,8,0,0,538510,0.5833856,4. Court-drawn
+2022,23.  Minnesota,3,Dean Phillips,198883,Tom Weiler,134797,333680,0,0.5960291,0.4039709,1,0.8079417,8,0,0,543450,0.6140031,4. Court-drawn
+2022,23.  Minnesota,4,Betty McCollum,200255,May Lor Xiong,95493,295748,0,0.6771137,0.3228863,1,0.6457728,8,0,0,543863,0.5437914,4. Court-drawn
+2022,23.  Minnesota,5,Ilhan Omar,214224,Cicely Davis,70702,284926,0,0.7518584,0.2481416,1,0.4962832,8,0,0,565115,0.5041912,4. Court-drawn
+2022,23.  Minnesota,6,Jeanne Hendricks,120852,Tom Emmer,198145,318997,0,0.37885,0.62115,0,0.7576999,8,0,0,534374,0.5969546,4. Court-drawn
+2022,23.  Minnesota,7,Jill Abahsain,84455,Michelle Fischbach,204766,289221,0,0.2920085,0.7079915,0,0.584017,8,0,0,546067,0.5296438,4. Court-drawn
+2022,23.  Minnesota,8,Jen Schultz,141009,Pete Stauber,188755,329764,0,0.4276058,0.5723942,0,0.8552116,8,0,0,565685,0.5829464,4. Court-drawn
+2022,24.  Mississippi,1,Dianne Black,45238,Trent Kelly,122151,167389,0,0.2702567,0.7297433,0,0.5405134,4,0,0,567468,0.2949752,6. Legislative trifecta R
+2022,24.  Mississippi,2,Bennie G. Thompson,108285,Brian Flowers,71884,180169,0,0.601019,0.398981,1,0.7979619,4,0,0,564262,0.3193003,6. Legislative trifecta R
+2022,24.  Mississippi,3,Shuwaski A. Young,54803,Michael Guest,132481,187284,0,0.2926198,0.7073802,0,0.5852395,4,0,0,566647,0.3305126,6. Legislative trifecta R
+2022,24.  Mississippi,4,Johnny L. DuPree,42876,Mike Ezell,127813,170689,0,0.2511937,0.7488063,0,0.5023874,4,0,1,569393,0.2997736,6. Legislative trifecta R
+2022,25.  Missouri,1,Cori Bush,160999,Andrew Jones,53767,214766,0,0.7496485,0.2503515,1,0.5007031,8,0,0,604248,0.3554269,6. Legislative trifecta R
+2022,25.  Missouri,2,Trish Gunby,135895,Ann Wagner,173277,309172,0,0.439545,0.560455,0,0.87909,8,0,0,595598,0.5190951,6. Legislative trifecta R
+2022,25.  Missouri,3,Bethany Mann,96851,Blaine Luetkemeyer,180746,277597,0,0.3488907,0.6511093,0,0.6977813,8,0,0,605305,0.4586068,6. Legislative trifecta R
+2022,25.  Missouri,4,Jack Truman,67069,Mark Alford,181890,248959,0,0.2693978,0.7306023,0,0.5387955,8,0,1,594450,0.4188056,6. Legislative trifecta R
+2022,25.  Missouri,5,Emanuel Cleaver,140688,Jacob Turk,84008,224696,0,0.626126,0.373874,1,0.7477481,8,0,0,594059,0.3782385,6. Legislative trifecta R
+2022,25.  Missouri,6,Henry Martin,72253,Sam Graves,184865,257118,0,0.281011,0.718989,0,0.5620221,8,0,0,590716,0.435265,6. Legislative trifecta R
+2022,25.  Missouri,7,Kristen Radaker-Sheafer,67485,Eric Burlison,178592,246077,0,0.2742434,0.7257566,0,0.5484868,8,0,1,597621,0.411761,6. Legislative trifecta R
+2022,25.  Missouri,8,Randi McCallian,53738,Jason Smith,186472,240210,0,0.2237126,0.7762874,0,0.4474252,8,0,0,597950,0.4017226,6. Legislative trifecta R
+2022,26.  Montana,1,Monica Tranel,115265,Ryan K. Zinke,123102,238367,0,0.4835611,0.516439,0,0.9671221,2,0,1,439746,0.5420561,3. Other commission
+2022,26.  Montana,2,Penny Ronning,43480,"Matthew M. Rosendale, Sr",121979,165459,0,0.2627841,0.7372159,0,0.5255682,2,0,0,420747,0.3932506,3. Other commission
+2022,27.  Nebraska,1,Patty Pansing Brooks,93929,Mike Flood,129236,223165,0,0.4208949,0.5791051,0,0.8417897,3,0,0,498400,0.4477628,6. Legislative trifecta R
+2022,27.  Nebraska,2,Tony Vargas,106807,Don Bacon,112663,219470,0,0.4866588,0.5133412,0,0.9733176,3,0,0,483944,0.4535029,6. Legislative trifecta R
+2022,27.  Nebraska,3,David J. Else,34836,Adrian Smith,172700,207536,0,0.1678552,0.8321448,0,0.3357104,3,0,0,496160,0.4182844,6. Legislative trifecta R
+2022,28.  Nevada,1,Dina Titus,115700,Mark Robertson,103115,218815,0,0.5287572,0.4712428,1,0.9424857,4,0,0,585935,0.3734459,5. Legislative trifecta D
+2022,28.  Nevada,2,Elizabeth Mercedes Krause,117371,Mark E. Amodei,185467,302838,0,0.3875703,0.6124297,0,0.7751405,4,0,0,612670,0.4942922,5. Legislative trifecta D
+2022,28.  Nevada,3,Susie Lee,131086,April Becker,121083,252169,0,0.5198339,0.4801661,1,0.9603322,4,0,0,622437,0.4051318,5. Legislative trifecta D
+2022,28.  Nevada,4,Steven Horsford,116617,Sam Peters,105870,222487,0,0.524152,0.475848,1,0.951696,4,0,0,594083,0.3745049,5. Legislative trifecta D
+2022,29.  New Hampshire,1,Chris Pappas,167391,Karoline Leavitt,142229,309620,0,0.5406337,0.4593663,1,0.9187326,2,0,0,561414,0.5515003,4. Court-drawn
+2022,29.  New Hampshire,2,Ann M. Kuster,171636,Robert Burns,135579,307215,0,0.5586836,0.4413164,1,0.8826327,2,0,0,562008,0.5466381,4. Court-drawn
+2022,30.  New Jersey,1,Donald Norcross,139559,Claire Gustafson,78794,218353,0,0.6391439,0.3608561,1,0.7217121,12,0,0,602163,0.3626145,3. Other commission
+2022,30.  New Jersey,2,Tim Alexander,94522,Jefferson Van Drew,139217,233739,0,0.4043912,0.5956088,0,0.8087825,12,0,0,614631,0.3802916,3. Other commission
+2022,30.  New Jersey,3,Andy Kim,150498,Bob Healey,118415,268913,0,0.5596531,0.4403469,1,0.8806937,12,0,0,614752,0.4374333,3. Other commission
+2022,30.  New Jersey,4,Matthew Jenkins,81233,Christopher H. Smith,173288,254521,0,0.3191603,0.6808397,0,0.6383206,12,0,0,585641,0.4346024,3. Other commission
+2022,30.  New Jersey,5,Josh Gottheimer,145559,Frank T. Pallotta,117873,263432,0,0.5525486,0.4474514,1,0.8949026,12,0,0,607080,0.4339329,3. Other commission
+2022,30.  New Jersey,6,"Frank Pallone, Jr",106238,Susan M. Kiley,75839,182077,0,0.5834784,0.4165216,1,0.8330432,12,0,0,611174,0.2979135,3. Other commission
+2022,30.  New Jersey,7,Tom Malinowski,150701,"Thomas H. Kean, Jr",159392,310093,0,0.4859865,0.5140135,0,0.9719729,12,1,0,610009,0.5083417,3. Other commission
+2022,30.  New Jersey,8,Robert J. Menendez,78382,Marcos Arroyo,24957,103339,0,0.7584939,0.2415061,1,0.4830122,12,0,1,602139,0.1716198,3. Other commission
+2022,30.  New Jersey,9,"Bill Pascrell, Jr",82457,Billy Prempeh,65365,147822,0,0.5578128,0.4421872,1,0.8843744,12,0,0,595058,0.2484161,3. Other commission
+2022,30.  New Jersey,10,"Donald M. Payne, Jr",100710,David H. Pinckney,25993,126703,0,0.7948509,0.2051491,1,0.4102981,12,0,0,588648,0.2152441,3. Other commission
+2022,30.  New Jersey,11,Mikie Sherrill,161436,Paul DeGroot,109952,271388,0,0.5948531,0.4051469,1,0.8102937,12,0,0,603923,0.4493752,3. Other commission
+2022,30.  New Jersey,12,Bonnie Watson Coleman,125127,Darius Mayfield,71175,196302,0,0.6374209,0.3625791,1,0.7251582,12,0,0,598284,0.3281084,3. Other commission
+2022,31.  New Mexico,1,Melanie A. Stansbury,156462,Michelle Garcia Holmes,124151,280613,0,0.5575722,0.4424278,1,0.8848556,3,0,0,565392,0.4963158,5. Legislative trifecta D
+2022,31.  New Mexico,2,Gabriel Vasquez,96986,Yvette Herrell,95636,192622,0,0.5035043,0.4964957,1,0.9929914,3,1,0,534494,0.360382,5. Legislative trifecta D
+2022,31.  New Mexico,3,Teresa Leger Fernandez,134217,Alexis Martinez Johnson,96565,230782,0,0.5815748,0.4184252,1,0.8368503,3,0,0,539099,0.4280883,5. Legislative trifecta D
+2022,32.  New York,1,Bridget Fleming,141907,Nicholas J. LaLota,177040,318947,0,0.4449235,0.5550765,0,0.8898469,26,0,1,620132,0.5143211,4. Court-drawn
+2022,32.  New York,2,Jackie Gordon,97774,Andrew R. Garbarino,151178,248952,0,0.3927424,0.6072576,0,0.7854847,26,0,0,608765,0.408946,4. Court-drawn
+2022,32.  New York,3,Robert P. Zimmerman,125404,George A. D. Santos,145824,271228,0,0.4623564,0.5376436,0,0.9247128,26,0,1,617358,0.4393367,4. Court-drawn
+2022,32.  New York,4,Laura A. Gillen,130871,Anthony P. Dâ€™Esposito,140622,271493,0,0.4820419,0.5179581,0,0.9640838,26,0,1,606891,0.4473505,4. Court-drawn
+2022,32.  New York,5,Gregory W. Meeks,104396,Paul King,34407,138803,0,0.7521163,0.2478837,1,0.4957674,26,0,0,629256,0.2205827,4. Court-drawn
+2022,32.  New York,6,Grace Meng,85049,Thomas J. Zmich,47504,132553,0,0.6416226,0.3583774,1,0.7167548,26,0,0,609979,0.2173075,4. Court-drawn
+2022,32.  New York,7,Nydia M. VelÃ¡zquez,119473,Juan Pagan,28597,148070,0,0.8068684,0.1931316,1,0.3862633,26,0,0,597177,0.2479499,4. Court-drawn
+2022,32.  New York,8,Hakeem S. Jeffries,99079,Yuri Dashevsky,39060,138139,0,0.7172413,0.2827587,1,0.5655174,26,0,0,606065,0.2279277,4. Court-drawn
+2022,32.  New York,9,Menachem M. Raitport,0.75,Yvette D. Clarke,0.25,1,1,0.75,0.25,1,0,26,0,0,583715,1.71E-06,4. Court-drawn
+2022,32.  New York,10,Daniel Goldman,160582,Benine A. Hamdan,29058,189640,0,0.8467728,0.1532272,1,0.3064543,26,0,1,599746,0.3162005,4. Court-drawn
+2022,32.  New York,11,Max N. Rose,71801,Nicole Malliotakis,115992,187793,0,0.3823412,0.6176588,0,0.7646824,26,0,0,596973,0.3145754,4. Court-drawn
+2022,32.  New York,12,Jerrold Nadler,200890,Michael K. Zumbluskas,44173,245063,0,0.8197484,0.1802516,1,0.3605032,26,0,0,621877,0.3940699,4. Court-drawn
+2022,32.  New York,13,Adriano Espaillat,0.75,,0.25,1,1,0.75,0.25,1,0,26,0,0,652745,1.53E-06,4. Court-drawn
+2022,32.  New York,14,Alexandria Ocasio-Cortez,82453,Tina Forte,31935,114388,0,0.7208186,0.2791814,1,0.5583628,26,0,0,572484,0.19981,4. Court-drawn
+2022,32.  New York,15,Ritchie Torres,76406,Stylo A. Sapaskis,15882,92288,0,0.8279083,0.1720917,1,0.3441834,26,0,0,569219,0.1621309,4. Court-drawn
+2022,32.  New York,16,Jamaal Bowman,133567,Miriam L. Flisser,74156,207723,0,0.6430054,0.3569946,1,0.7139893,26,0,0,604697,0.3435158,4. Court-drawn
+2022,32.  New York,17,Sean Patrick Maloney,141730,Michael V. Lawler,143550,285280,0,0.4968101,0.5031899,0,0.9936203,26,1,0,587193,0.4858369,4. Court-drawn
+2022,32.  New York,18,Patrick Ryan,135245,Colin J. Schmitt,131653,266898,0,0.5067292,0.4932708,1,0.9865417,26,0,0,608532,0.4385932,4. Court-drawn
+2022,32.  New York,19,Josh Riley,141509,Marcus Molinaro,146004,287513,0,0.492183,0.507817,0,0.9843659,26,0,1,636802,0.4514951,4. Court-drawn
+2022,32.  New York,20,Paul Tonko,160420,Elizabeth L. Joy,130869,291289,0,0.5507246,0.4492754,1,0.8985509,26,0,0,630167,0.462241,4. Court-drawn
+2022,32.  New York,21,Matt Castelli,116421,Elise M. Stefanik,168579,285000,0,0.4084947,0.5915053,0,0.8169895,26,0,0,623724,0.4569329,4. Court-drawn
+2022,32.  New York,22,Francis Conole,132913,Brandon M. Williams,135544,268457,0,0.4950998,0.5049002,0,0.9901996,26,0,1,610715,0.4395782,4. Court-drawn
+2022,32.  New York,23,Max H. Della Pia,104114,Nick Langworthy,192694,296808,0,0.350779,0.6492211,0,0.7015579,26,0,1,618192,0.4801227,4. Court-drawn
+2022,32.  New York,24,Steven Holden,95028,Claudia Tenney,182054,277082,0,0.3429599,0.6570401,0,0.6859197,26,0,0,619756,0.4470824,4. Court-drawn
+2022,32.  New York,25,Joseph D. Morelle,152022,Laâ€™Ron D. Singletary,130190,282212,0,0.5386801,0.4613199,1,0.9226397,26,0,0,615918,0.4581974,4. Court-drawn
+2022,32.  New York,26,Brian Higgins,156883,Steven L. Sams II,88339,245222,0,0.6397591,0.3602409,1,0.7204819,26,0,0,617858,0.3968906,4. Court-drawn
+2022,33.  North Carolina,1,Don Davis,134996,Sandy Smith,112780,247776,0,0.5448308,0.4551692,1,0.9103383,14,0,1,590207,0.419812,4. Court-drawn
+2022,33.  North Carolina,2,Deborah K. Ross,190714,Christine E. Villaverde,104155,294869,0,0.6467754,0.3532246,1,0.7064493,14,0,0,574329,0.5134148,4. Court-drawn
+2022,33.  North Carolina,3,Barbara D. Gaskins,82378,Gregory F. Murphy,166520,248898,0,0.3309709,0.6690291,0,0.6619418,14,0,0,581729,0.427859,4. Court-drawn
+2022,33.  North Carolina,4,Valerie P. Foushee,194983,Courtney Geels,96442,291425,0,0.6690675,0.3309325,1,0.661865,14,0,1,592117,0.4921747,4. Court-drawn
+2022,33.  North Carolina,5,Kyle Parrish,102269,Virginia Foxx,175279,277548,0,0.3684732,0.6315268,0,0.7369464,14,0,0,597336,0.464643,4. Court-drawn
+2022,33.  North Carolina,6,Kathy E. Manning,139553,Christian Castelli,116635,256188,0,0.5447289,0.4552711,1,0.9105422,14,0,0,582970,0.4394532,4. Court-drawn
+2022,33.  North Carolina,7,Charles Graham,120222,David Rouzer,164047,284269,0,0.4229163,0.5770837,0,0.8458326,14,0,0,600376,0.473485,4. Court-drawn
+2022,33.  North Carolina,8,Scott Huffman,73192,Dan Bishop,183998,257190,0,0.2845834,0.7154166,0,0.5691668,14,0,0,574580,0.4476139,4. Court-drawn
+2022,33.  North Carolina,9,Ben Clark,101202,Richard Hudson,131453,232655,0,0.4349874,0.5650126,0,0.8699749,14,0,0,570659,0.4076953,4. Court-drawn
+2022,33.  North Carolina,10,Pam Genant,73174,Patrick T. McHenry,194681,267855,0,0.2731851,0.7268149,0,0.5463702,14,0,0,590118,0.4539008,4. Court-drawn
+2022,33.  North Carolina,11,Jasmine Beach-Ferrara,144165,Chuck Edwards,174232,318397,0,0.4527838,0.5472162,0,0.9055676,14,0,1,612586,0.5197589,4. Court-drawn
+2022,33.  North Carolina,12,Alma S. Adams,140494,Tyler Lee,83414,223908,0,0.627463,0.372537,1,0.7450739,14,0,0,564111,0.3969219,4. Court-drawn
+2022,33.  North Carolina,13,Wiley Nickel,143090,Bo Hines,134256,277346,0,0.5159259,0.4840741,1,0.9681481,14,0,1,573925,0.4832443,4. Court-drawn
+2022,33.  North Carolina,14,Jeff Jackson,148738,Pat Harrigan,109014,257752,0,0.5770586,0.4229414,1,0.8458829,14,0,1,581283,0.4434191,4. Court-drawn
+2022,34.  North Dakota,0,,0,Kelly Armstrong,1,1,0,0,1,0,0,1,0,0,594141,1.68E-06,1. At-large
+2022,35.  Ohio,1,Greg Landsman,156416,Steve Chabot,140058,296474,0,0.5275876,0.4724124,1,0.9448248,15,1,0,606336,0.4889599,6. Legislative trifecta R
+2022,35.  Ohio,2,Samantha Meadows,65745,Brad R. Wenstrup,192117,257862,0,0.254962,0.745038,0,0.5099239,15,0,0,610845,0.4221398,6. Legislative trifecta R
+2022,35.  Ohio,3,Joyce Beatty,182324,Lee R. Stahley,76455,258779,0,0.7045549,0.2954451,1,0.5908903,15,0,0,611382,0.4232689,6. Legislative trifecta R
+2022,35.  Ohio,4,Tamie Wilson,89383,Jim Jordan,200773,290156,0,0.3080515,0.6919485,0,0.6161031,15,0,0,604308,0.4801459,6. Legislative trifecta R
+2022,35.  Ohio,5,Craig Swartz,92634,Robert E. Latta,187303,279937,0,0.3309102,0.6690898,0,0.6618204,15,0,0,611191,0.4580188,6. Legislative trifecta R
+2022,35.  Ohio,6,Louis G. Lyras,90500,Bill Johnson,189883,280383,0,0.3227728,0.6772273,0,0.6455455,15,0,0,626205,0.4477495,6. Legislative trifecta R
+2022,35.  Ohio,7,Matthew Diemer,135485,Matthew Diemer,168002,303487,0,0.4464277,0.5535723,0,0.8928554,15,0,1,617054,0.4918322,6. Legislative trifecta R
+2022,35.  Ohio,8,Warren Davidson,98629,Vanessa Enoch,180287,278916,0,0.3536154,0.6463846,0,0.7072309,15,0,0,599727,0.4650716,6. Legislative trifecta R
+2022,35.  Ohio,9,Marcy Kaptur,150655,J. R. Majewski,115362,266017,0,0.566336,0.433664,1,0.867328,15,0,0,611346,0.4351333,6. Legislative trifecta R
+2022,35.  Ohio,10,David Esrati,104634,Michael R. Turner,168327,272961,0,0.3833295,0.6166705,0,0.766659,15,0,0,613457,0.4449554,6. Legislative trifecta R
+2022,35.  Ohio,11,Shontel M. Brown,167722,Eric J. Brewer,47988,215710,0,0.7775347,0.2224653,1,0.4449307,15,0,0,618631,0.3486893,6. Legislative trifecta R
+2022,35.  Ohio,12,Amy Rippel-Elton,84893,Troy Balderson,191344,276237,0,0.3073194,0.6926806,0,0.6146389,15,0,0,607645,0.4546026,6. Legislative trifecta R
+2022,35.  Ohio,13,Emilia Sykes,149816,Madison Gesiotto Gilbert,134593,284409,0,0.5267625,0.4732375,1,0.946475,15,0,1,620132,0.4586265,6. Legislative trifecta R
+2022,35.  Ohio,14,Matt Kilboy,113639,David P. Joyce,183389,297028,0,0.3825868,0.6174132,0,0.7651737,15,0,0,627149,0.4736163,6. Legislative trifecta R
+2022,35.  Ohio,15,Gary Josephson,108139,Mike Carey,143112,251251,0,0.4304023,0.5695977,0,0.8608046,15,0,0,595953,0.4215953,6. Legislative trifecta R
+2022,36.  Oklahoma,1,Adam Martin,80974,Kevin Hern,142800,223774,0,0.3618562,0.6381438,0,0.7237123,5,0,0,596244,0.3753061,6. Legislative trifecta R
+2022,36.  Oklahoma,2,Naomi Andrews,54194,Josh Brecheen,167843,222037,0,0.2440764,0.7559236,0,0.4881529,5,0,1,613397,0.3619793,6. Legislative trifecta R
+2022,36.  Oklahoma,3,Jeremiah A. Ross,50354,Frank D. Lucas,147418,197772,0,0.2546063,0.7453937,0,0.5092126,5,0,0,594628,0.3325979,6. Legislative trifecta R
+2022,36.  Oklahoma,4,Mary Brannon,74667,Tom Cole,149879,224546,0,0.3325243,0.6674757,0,0.6650486,5,0,0,612186,0.3667938,6. Legislative trifecta R
+2022,36.  Oklahoma,5,Joshua Harris-Till,96799,Stephanie I. Bice,152699,249498,0,0.3879751,0.6120249,0,0.7759501,5,0,0,603598,0.4133513,6. Legislative trifecta R
+2022,37.  Oregon,1,Suzanne Bonamici,210682,Christopher A. Mann,99042,309724,0,0.680225,0.319775,1,0.63955,6,0,0,564999,0.5481851,5. Legislative trifecta D
+2022,37.  Oregon,2,Joe Yetter,99882,Cliff Bentz,208369,308251,0,0.3240281,0.6759719,0,0.6480563,6,0,0,557094,0.5533196,5. Legislative trifecta D
+2022,37.  Oregon,3,Earl Blumenauer,212119,Joanna Harbour,79766,291885,0,0.7267212,0.2732788,1,0.5465577,6,0,0,562280,0.5191097,5. Legislative trifecta D
+2022,37.  Oregon,4,Val Hoyle,171372,Alek Skarlatos,146055,317427,0,0.5398785,0.4601215,1,0.9202431,6,0,1,582362,0.5450682,5. Legislative trifecta D
+2022,37.  Oregon,5,Jamie McLeod-Skinner,171514,Lori Chavez-DeRemer,178813,350327,0,0.4895826,0.5104174,0,0.9791652,6,0,1,558272,0.6275203,5. Legislative trifecta D
+2022,37.  Oregon,6,Andrea Salinas,147156,Mike Erickson,139946,287102,0,0.5125565,0.4874435,1,0.974887,6,0,1,548389,0.5235371,5. Legislative trifecta D
+2022,38.  Pennsylvania,1,Ashley Ehasz,165809,Brian K. Fitzpatrick,201571,367380,0,0.4513283,0.5486717,0,0.9026567,17,0,0,608475,0.6037717,4. Court-drawn
+2022,38.  Pennsylvania,2,Brendan F. Boyle,141229,Aaron Bashir,45454,186683,0,0.7565177,0.2434823,1,0.4869645,17,0,0,580086,0.3218195,4. Court-drawn
+2022,38.  Pennsylvania,3,Dwight Evans,0.75,,0.25,1,1,0.75,0.25,1,0,17,0,0,615348,1.63E-06,4. Court-drawn
+2022,38.  Pennsylvania,4,Madeleine Dean,224799,Christian Nascimento,141986,366785,0,0.6128904,0.3871096,1,0.7742192,17,0,0,606806,0.6044518,4. Court-drawn
+2022,38.  Pennsylvania,5,Mary Gay Scanlon,205128,David Galluch,110059,315187,0,0.6508136,0.3491864,1,0.6983727,17,0,0,592720,0.5317637,4. Court-drawn
+2022,38.  Pennsylvania,6,Chrissy Houlahan,190386,Guy Ciarrocchi,136097,326483,0,0.5831422,0.4168578,1,0.8337157,17,0,0,591085,0.5523453,4. Court-drawn
+2022,38.  Pennsylvania,7,Susan Wild,151364,Lisa Scheller,145527,296891,0,0.5098302,0.4901698,1,0.9803396,17,0,0,606141,0.4898052,4. Court-drawn
+2022,38.  Pennsylvania,8,Matt Cartwright,146956,Jim Bognet,139930,286886,0,0.5122453,0.4877547,1,0.9755095,17,0,0,612901,0.4680789,4. Court-drawn
+2022,38.  Pennsylvania,9,Amanda R. Waldman,92622,Daniel Meuser,209185,301807,0,0.3068915,0.6931085,0,0.613783,17,0,0,611274,0.4937344,4. Court-drawn
+2022,38.  Pennsylvania,10,Shamaine Daniels,145215,Scott Perry,169331,314546,0,0.4616654,0.5383346,0,0.9233308,17,0,0,602320,0.5222241,4. Court-drawn
+2022,38.  Pennsylvania,11,Bob Hollister,121835,Lloyd Smucker,194991,316826,0,0.3845486,0.6154514,0,0.7690972,17,0,0,590646,0.5364059,4. Court-drawn
+2022,38.  Pennsylvania,12,Summer Lee,184674,Mike Doyle,143746,328420,0,0.5623105,0.4376895,1,0.8753791,17,0,1,628235,0.5227662,4. Court-drawn
+2022,38.  Pennsylvania,13,,0.25,John Joyce,0.75,1,1,0.25,0.75,0,0,17,0,0,609470,1.64E-06,4. Court-drawn
+2022,38.  Pennsylvania,14,,0.25,Guy Reschenthaler,0.75,1,1,0.25,0.75,0,0,17,0,0,623148,1.60E-06,4. Court-drawn
+2022,38.  Pennsylvania,15,Mike Molesevich,91729,Glenn Thompson,213417,305146,0,0.3006069,0.699393,0,0.6012139,17,0,0,624019,0.4890011,4. Court-drawn
+2022,38.  Pennsylvania,16,Dan Pastore,130443,Mike Kelly,190546,320989,0,0.4063784,0.5936216,0,0.8127568,17,0,0,612104,0.5244027,4. Court-drawn
+2022,38.  Pennsylvania,17,Chris Deluzio,193615,Jeremy Shaffer,169013,362628,0,0.5339218,0.4660782,1,0.9321564,17,0,1,609868,0.5946008,4. Court-drawn
+2022,39.  Rhode Island,1,David N. Cicilline,100318,Allen R. Waters,56055,156373,0,0.6415302,0.3584698,1,0.7169396,2,0,0,438899,0.3562847,5. Legislative trifecta D
+2022,39.  Rhode Island,2,Seth M. Magaziner,101432,Allan W. Fung,93969,195401,0,0.5190966,0.4809034,1,0.9618068,2,0,1,447027,0.4371123,5. Legislative trifecta D
+2022,40.  South Carolina,1,Annie Andrews,115796,Nancy Mace,153757,269553,0,0.4295853,0.5704147,0,0.8591706,7,0,0,577794,0.4665209,6. Legislative trifecta R
+2022,40.  South Carolina,2,Judd Larkins,98081,Joe Wilson,147699,245780,0,0.3990601,0.6009399,0,0.7981203,7,0,0,568526,0.4323109,6. Legislative trifecta R
+2022,40.  South Carolina,3,,0.25,Jeff Duncan,0.75,1,1,0.25,0.75,0,0,7,0,0,576975,1.73E-06,6. Legislative trifecta R
+2022,40.  South Carolina,4,,0.25,William R. Timmons IV,0.75,1,1,0.25,0.75,0,0,7,0,0,569953,1.75E-06,6. Legislative trifecta R
+2022,40.  South Carolina,5,Evangeline Hundley,83299,Ralph Norman,154725,238024,0,0.3499605,0.6500395,0,0.699921,7,0,0,565458,0.4209402,6. Legislative trifecta R
+2022,40.  South Carolina,6,James E. Clyburn,130923,Duke Buckner,79879,210802,0,0.621071,0.378929,1,0.7578581,7,0,0,587783,0.3586392,6. Legislative trifecta R
+2022,40.  South Carolina,7,Daryl W. Scott,89030,Russell Fry,164440,253470,0,0.3512447,0.6487553,0,0.7024894,7,0,1,592334,0.4279174,6. Legislative trifecta R
+2022,41.  South Dakota,0,,0.25,Dusty Johnson,0.75,1,1,0.25,0.75,0,0,1,0,0,673730,1.48E-06,1. At-large
+2022,42.  Tennessee,1,Cameron Parsons,37049,Diana Harshbarger,147241,184290,0,0.2010364,0.7989636,0,0.4020728,9,0,0,619714,0.2973791,6. Legislative trifecta R
+2022,42.  Tennessee,2,Mark Harmon,66673,Tim Burchett,141089,207762,0,0.3209105,0.6790895,0,0.6418209,9,0,0,614735,0.33797,6. Legislative trifecta R
+2022,42.  Tennessee,3,Meg Gorman,60334,Charles J. â€œChuckâ€ Fleischmann,136639,196973,0,0.3063059,0.6936941,0,0.6126119,9,0,0,610666,0.3225544,6. Legislative trifecta R
+2022,42.  Tennessee,4,Wayne Steele,44648,Scott DesJarlais,122401,167049,0,0.2672749,0.7327251,0,0.5345498,9,0,0,592616,0.281884,6. Legislative trifecta R
+2022,42.  Tennessee,5,Heidi Campbell,93648,Andy Ogles,123558,217206,0,0.4311483,0.5688517,0,0.8622966,9,0,1,584522,0.3715959,6. Legislative trifecta R
+2022,42.  Tennessee,6,Randal Cooper,65675,John W. Rose,129388,195063,0,0.3366861,0.6633139,0,0.6733722,9,0,0,608733,0.320441,6. Legislative trifecta R
+2022,42.  Tennessee,7,Odessa Kelly,68973,Mark E. Green,108421,177394,0,0.3888125,0.6111875,0,0.777625,9,0,0,596922,0.2971812,6. Legislative trifecta R
+2022,42.  Tennessee,8,Lynnette P. Williams,51102,David Kustoff,155602,206704,0,0.2472231,0.7527769,0,0.4944462,9,0,0,592780,0.3487027,6. Legislative trifecta R
+2022,42.  Tennessee,9,Steve Cohen,93800,Charlotte Bergmann,35123,128923,0,0.7275661,0.2724339,1,0.5448679,9,0,0,576604,0.2235902,6. Legislative trifecta R
+2022,43.  Texas,1,Jrmar â€œJJâ€ Jefferson,51438,Nathaniel Moran,183224,234662,0,0.2192004,0.7807996,0,0.4384008,38,0,1,583561,0.4021208,6. Legislative trifecta R
+2022,43.  Texas,2,Robin Fulford,78496,Dan Crenshaw,151791,230287,0,0.3408616,0.6591384,0,0.6817232,38,0,0,547392,0.4206985,6. Legislative trifecta R
+2022,43.  Texas,3,Sandeep Srivastava,100121,Keith Self,164240,264361,0,0.3787283,0.6212717,0,0.7574567,38,0,1,576380,0.4586575,6. Legislative trifecta R
+2022,43.  Texas,4,Iro Omere,79179,Pat Fallon,170781,249960,0,0.3167667,0.6832333,0,0.6335334,38,0,0,584408,0.4277149,6. Legislative trifecta R
+2022,43.  Texas,5,Tartisha Hill,71930,Lance Gooden,135595,207525,0,0.3466088,0.6533911,0,0.6932177,38,0,0,576468,0.359994,6. Legislative trifecta R
+2022,43.  Texas,6,,0.25,Jake Ellzey,0.75,1,1,0.25,0.75,0,0,38,0,0,565411,1.77E-06,6. Legislative trifecta R
+2022,43.  Texas,7,Lizzie Fletcher,115994,Johnny Teague,65835,181829,0,0.637929,0.362071,1,0.7241419,38,0,0,607441,0.2993361,6. Legislative trifecta R
+2022,43.  Texas,8,Laura Jones,68715,Morgan Luttrell,153127,221842,0,0.3097475,0.6902525,0,0.619495,38,0,1,564081,0.3932804,6. Legislative trifecta R
+2022,43.  Texas,9,Al Green,125446,Jimmy I. Leon,38161,163607,0,0.766752,0.233248,1,0.4664959,38,0,0,560748,0.2917656,6. Legislative trifecta R
+2022,43.  Texas,10,Linda Nuno,86404,Michael T. McCaul,159469,245873,0,0.3514172,0.6485828,0,0.7028344,38,0,0,593159,0.4145145,6. Legislative trifecta R
+2022,43.  Texas,11,,0.25,August Pfluger,0.75,1,1,0.25,0.75,0,0,38,0,0,555625,1.80E-06,6. Legislative trifecta R
+2022,43.  Texas,12,Trey J. Hunt,85026,Kay Granger,125953,210979,0,0.4030069,0.5969931,0,0.8060139,38,0,0,583662,0.3614746,6. Legislative trifecta R
+2022,43.  Texas,13,Kathleen Brown,52910,Ronny Jackson,161767,214677,0,0.2464633,0.7535367,0,0.4929266,38,0,0,585808,0.3664631,6. Legislative trifecta R
+2022,43.  Texas,14,Mikal Williams,63606,"Randy K. Weber, Sr",149543,213149,0,0.298411,0.701589,0,0.596822,38,0,0,585502,0.3640449,6. Legislative trifecta R
+2022,43.  Texas,15,Michelle Vallejo,68097,Monica De La Cruz,80978,149075,0,0.4567969,0.5432031,0,0.9135938,38,0,1,542711,0.2746858,6. Legislative trifecta R
+2022,43.  Texas,16,Veronica Escobar,95510,Irene Armendariz Jackson,54986,150496,0,0.6346348,0.3653652,1,0.7307304,38,0,0,569049,0.2644693,6. Legislative trifecta R
+2022,43.  Texas,17,Mary Jo Woods,72801,Pete Sessions,144408,217209,0,0.3351657,0.6648343,0,0.6703314,38,0,0,594254,0.3655154,6. Legislative trifecta R
+2022,43.  Texas,18,Sheila Jackson Lee,110511,Carmen Maria Montiel,40941,151452,0,0.7296767,0.2703233,1,0.5406466,38,0,0,574464,0.2636406,6. Legislative trifecta R
+2022,43.  Texas,19,,0.25,Jodey C. Arrington,0.75,1,1,0.25,0.75,0,0,38,0,0,577303,1.73E-06,6. Legislative trifecta R
+2022,43.  Texas,20,Joaquin Castro,115352,Kyle Sinclair,53226,168578,0,0.6842648,0.3157352,1,0.6314703,38,0,0,590852,0.2853134,6. Legislative trifecta R
+2022,43.  Texas,21,Claudia Andreana Zapata,122655,Chip Roy,207426,330081,0,0.3715906,0.6284094,0,0.7431812,38,0,0,595860,0.5539573,6. Legislative trifecta R
+2022,43.  Texas,22,Jamie Kaye Jordan,85653,Troy E. Nehls,150014,235667,0,0.3634493,0.6365507,0,0.7268986,38,0,0,566418,0.4160655,6. Legislative trifecta R
+2022,43.  Texas,23,John Lira,80947,Tony Gonzales,116649,197596,0,0.4096591,0.5903409,0,0.8193182,38,0,0,549344,0.3596945,6. Legislative trifecta R
+2022,43.  Texas,24,Jan McDowell,119878,Beth Van Duyne,177947,297825,0,0.4025115,0.5974885,0,0.8050231,38,0,0,567658,0.5246557,6. Legislative trifecta R
+2022,43.  Texas,25,,0.25,Roger Williams,0.75,1,1,0.25,0.75,0,0,38,0,0,593301,1.69E-06,6. Legislative trifecta R
+2022,43.  Texas,26,,0.25,Michael C. Burgess,0.75,1,1,0.25,0.75,0,0,38,0,0,585653,1.71E-06,6. Legislative trifecta R
+2022,43.  Texas,27,"Maclovio Perez, Jr",73611,Michael Cloud,133416,207027,0,0.3555623,0.6444377,0,0.7111247,38,0,0,582291,0.3555387,6. Legislative trifecta R
+2022,43.  Texas,28,Henry Cuellar,93803,Cassy Garcia,71778,165581,0,0.5665082,0.4334918,1,0.8669835,38,0,0,546025,0.303248,6. Legislative trifecta R
+2022,43.  Texas,29,Sylvia R. Garcia,71837,Robert Schafranek,28765,100602,0,0.7140713,0.2859287,1,0.5718574,38,0,0,547204,0.1838473,6. Legislative trifecta R
+2022,43.  Texas,30,Jasmine Crockett,134876,James Rodgers,39209,174085,0,0.7747709,0.2252291,1,0.4504581,38,0,1,572054,0.3043157,6. Legislative trifecta R
+2022,43.  Texas,31,,0.25,John R. Carter,0.75,1,1,0.25,0.75,0,0,38,0,0,587215,1.70E-06,6. Legislative trifecta R
+2022,43.  Texas,32,Colin Z. Allred,116005,Antonio Swad,61494,177499,0,0.6535529,0.3464471,1,0.692894,38,0,0,584943,0.3034467,6. Legislative trifecta R
+2022,43.  Texas,33,Marc A. Veasey,82081,Patrick David Gillespie,29203,111284,0,0.7375813,0.2624187,1,0.5248374,38,0,0,556319,0.2000363,6. Legislative trifecta R
+2022,43.  Texas,34,Vicente Gonzalez,70896,Mayra Flores,59464,130360,0,0.5438478,0.4561522,1,0.9123044,38,1,0,537802,0.242394,6. Legislative trifecta R
+2022,43.  Texas,35,Greg Casar,129599,Dan McQueen,48969,178568,0,0.7257683,0.2742317,1,0.5484633,38,0,1,589162,0.3030881,6. Legislative trifecta R
+2022,43.  Texas,36,Jon Haire,64016,Brian Babin,145599,209615,0,0.305398,0.694602,0,0.610796,38,0,0,569632,0.3679832,6. Legislative trifecta R
+2022,43.  Texas,37,Lloyd Doggett,219358,Jenny Garcia Sharon,59923,279281,0,0.7854383,0.2145617,1,0.4291233,38,0,0,628508,0.4443555,6. Legislative trifecta R
+2022,43.  Texas,38,Duncan F. Klussmann,92302,Wesley Hunt,163597,255899,0,0.360697,0.639303,0,0.721394,38,0,1,569546,0.4493035,6. Legislative trifecta R
+2022,44.  Utah,1,Rick Edwin Jones,87986,Blake D. Moore,178434,266420,0,0.330253,0.669747,0,0.660506,4,0,0,593615,0.4488094,6. Legislative trifecta R
+2022,44.  Utah,2,Nick Mitchell,88224,Chris Stewart,154883,243107,0,0.3629019,0.6370981,0,0.7258039,4,0,0,599957,0.4052074,6. Legislative trifecta R
+2022,44.  Utah,3,Glenn J. Wright,83687,John R. Curtis,182497,266184,0,0.3143953,0.6856047,0,0.6287906,4,0,0,593771,0.448294,6. Legislative trifecta R
+2022,44.  Utah,4,Darlene McDonald,82181,Burgess Owens,155110,237291,0,0.34633,0.65367,0,0.6926601,4,0,0,560469,0.4233794,6. Legislative trifecta R
+2022,45.  Vermont,0,Becca Balint,176494,Liam Madden,78397,254891,0,0.6924293,0.3075707,1,0.6151414,1,0,1,526999,0.483665,1. At-large
+2022,46.  Virginia,1,"Herbert C. â€œHerbâ€ Jones, Jr",147229,Robert J. Wittman,191828,339057,0,0.4342308,0.5657692,0,0.8684617,11,0,0,613302,0.5528386,4. Court-drawn
+2022,46.  Virginia,2,Elaine G. Luria,143219,Jen A. Kiggans,153328,296547,0,0.4829555,0.5170445,0,0.965911,11,1,0,607606,0.4880581,4. Court-drawn
+2022,46.  Virginia,3,Robert C. â€œBobbyâ€ Scott,139659,Terry T. Namkung,67668,207327,0,0.6736171,0.3263829,1,0.6527659,11,0,0,606129,0.3420509,4. Court-drawn
+2022,46.  Virginia,4,A. Donald McEachin,159044,"Leon Benjamin, Sr.",85503,244547,0,0.6503617,0.3496383,1,0.6992766,11,0,0,631346,0.3873423,4. Court-drawn
+2022,46.  Virginia,5,Joshua M. Throneburg,129996,Bob Good,177191,307187,0,0.423182,0.576818,0,0.846364,11,0,0,638550,0.4810696,4. Court-drawn
+2022,46.  Virginia,6,Jennifer Lynn Lewis,95410,Ben Cline,173352,268762,0,0.3549981,0.6450019,0,0.7099962,11,0,0,624713,0.4302168,4. Court-drawn
+2022,46.  Virginia,7,Abigail Davis Spanberger,143357,Yesli I. Vega,130586,273943,0,0.5233096,0.4766904,1,0.9533808,11,0,0,589198,0.4649422,4. Court-drawn
+2022,46.  Virginia,8,"Donald S. Beyer, Jr",197760,Karina A. Lipsman,66589,264349,0,0.7481019,0.2518981,1,0.5037961,11,0,0,614918,0.4298931,4. Court-drawn
+2022,46.  Virginia,9,Taysha Lee DeVaughan,66027,H. Morgan Griffith,182207,248234,0,0.2659869,0.7340131,0,0.5319738,11,0,0,642535,0.3863354,4. Court-drawn
+2022,46.  Virginia,10,Jennifer Wexton,157405,Hung Cao,138163,295568,0,0.5325509,0.4674491,1,0.9348983,11,0,0,575859,0.5132645,4. Court-drawn
+2022,46.  Virginia,11,Gerald E. Connolly,193190,James G. â€œJimâ€ Myles,95634,288824,0,0.6688849,0.3311151,1,0.6622303,11,0,0,603529,0.4785586,4. Court-drawn
+2022,47.  Washington,1,Suzan K. DelBene,181992,Vincent J. Caveleri,104329,286321,0,0.6356223,0.3643777,1,0.7287555,10,0,0,598566,0.4783449,3. Other commission
+2022,47.  Washington,2,Rick Larsen,202980,Dan Matthews,134335,337315,0,0.601752,0.398248,1,0.7964959,10,0,0,618717,0.5451846,3. Other commission
+2022,47.  Washington,3,Marie Gluesenkamp Perez,160314,Joe Kent,157685,317999,0,0.5041336,0.4958664,1,0.9917327,10,0,1,596925,0.5327286,3. Other commission
+2022,47.  Washington,4,Doug White,70710,Dan Newhouse,150619,221329,0,0.3194791,0.6805209,0,0.6389583,10,0,0,553956,0.3995426,3. Other commission
+2022,47.  Washington,5,Natasha Hill,127585,Cathy McMorris Rodgers,188648,316233,0,0.4034525,0.5965475,0,0.806905,10,0,0,610028,0.518391,3. Other commission
+2022,47.  Washington,6,Derek Kilmer,208710,Elizabeth Kreiselmaier,138754,347464,0,0.6006665,0.3993335,1,0.7986669,10,0,0,624526,0.5563644,3. Other commission
+2022,47.  Washington,7,Pramila Jayapal,295998,Cliff Moon,49207,345205,0,0.8574557,0.1425443,1,0.2850886,10,0,0,651874,0.5295579,3. Other commission
+2022,47.  Washington,8,Kim Schrier,179003,Matt Larkin,155976,334979,0,0.5343708,0.4656292,1,0.9312584,10,0,0,580486,0.5770665,3. Other commission
+2022,47.  Washington,9,Adam Smith,171746,Doug Basler,67631,239377,0,0.7174708,0.2825292,1,0.5650585,10,0,0,598341,0.4000679,3. Other commission
+2022,47.  Washington,10,Marilyn Strickland,152544,Keith R. Swank,114777,267321,0,0.5706398,0.4293602,1,0.8587204,10,0,0,592133,0.4514543,3. Other commission
+2022,48.  West Virginia,1,Lacy Watson,65428,Carol D. Miller,151511,216939,0,0.3015963,0.6984037,0,0.6031926,2,0,0,711957,0.304708,6. Legislative trifecta R
+2022,48.  West Virginia,2,Barry Lee Wendell,84278,Alexander X. Mooney,160493,244771,0,0.3443137,0.6556864,0,0.6886273,2,0,0,721226,0.3393818,6. Legislative trifecta R
+2022,49.  Wisconsin,1,Ann Roe,135825,Bryan Steil,162610,298435,0,0.4551242,0.5448757,0,0.9102485,8,0,0,572962,0.5208635,4. Court-drawn
+2022,49.  Wisconsin,2,Mark Pocan,268740,Erik Olsen,101890,370630,0,0.7250897,0.2749103,1,0.5498206,8,0,0,584893,0.6336715,4. Court-drawn
+2022,49.  Wisconsin,3,Brad Pfaff,152977,Derrick Van Orden,164743,317720,0,0.4814837,0.5185163,0,0.9629674,8,0,1,582974,0.5449986,4. Court-drawn
+2022,49.  Wisconsin,4,Gwen Moore,191955,Tim Rogers,57660,249615,0,0.7690043,0.2309957,1,0.4619915,8,0,0,549187,0.4545173,4. Court-drawn
+2022,49.  Wisconsin,5,Mike Van Someren,134581,Scott Fitzgerald,243741,378322,0,0.3557314,0.6442686,0,0.7114627,8,0,0,585526,0.6461233,4. Court-drawn
+2022,49.  Wisconsin,6,,0.25,Glenn Grothman,0.75,1,1,0.25,0.75,0,0,8,0,0,582758,1.72E-06,4. Court-drawn
+2022,49.  Wisconsin,7,Richard Dick Ausman,128877,Thomas P. Tiffany,209224,338101,0,0.381179,0.618821,0,0.762358,8,0,0,581715,0.5812142,4. Court-drawn
+2022,49.  Wisconsin,8,,0.25,Mike Gallagher,0.75,1,1,0.25,0.75,0,0,8,0,0,572972,1.75E-06,4. Court-drawn
+2022,50.  Wyoming,0,Lynnette Grey Bull,47250,Harriet Hageman,132206,179456,0,0.2632957,0.7367042,0,0.5265915,1,0,1,445576,0.4027506,1. At-large
