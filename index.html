@@ -2,10 +2,10 @@
 <meta charset="utf-8">
 <style>
   #popup{
+    visibility:hidden;
     position:absolute;
 border:1px solid black;
 width:250px;
-height:150px;
 font-size:11px;
 background-color:rgba(255,255,255,.8);
 font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -21,23 +21,18 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     height:20px;
 
   }
+  #popSwing{
+    font-weight:700;
+    padding:5px;
+    font-size:12px;
+  }
   #dem{
-    width:100px;
-    display:inline-block;
     margin:0px;
-    height:50px;
-    overflow:hidden;
     padding:5px
   }
   #gop{
-    width:100px;
     margin:0px;
-    display:inline-block;
-    height:50px;
-    overflow:hidden;
     padding:5px;
-    position:relative;
-    float:top;
   }
   #swing{
     border-top:1px solid black;
@@ -52,19 +47,20 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
 
 <!-- Create an element where the map will take place -->
  
-<div id="key">key</div>
-<div id="histo">histo</div>
+<div id="key"></div>
+<div id="histo"></div>
 <svg id="my_dataviz" width="950" height="500"></svg>
 <div id="popup">
   <div id="popTitle">title</div>
-    <div id="dem">dem</div>
-    <div id="gop">gop</div>
+  <div id="popSwing">nationalSwing</div>
+  <div id="dem">dem</div>
+  <div id="gop">gop</div>
     <div id="swing">swing</div>
    </div>
 <script>
 var blue = "#007194"
 var red = "#F69679"
-
+var currentSwing = 0
     // The svg
     const svg = d3.select("svg"),
       width = +svg.attr("width"),
@@ -162,6 +158,7 @@ var red = "#F69679"
               }
             } 
           })
+          .style("cursor","pointer")
           .style("stroke", "#fff")
           .attr("stroke-width",.2)
           .style("opacity", 1)
@@ -169,10 +166,15 @@ var red = "#F69679"
             var key = d.properties.state+parseInt(d.properties.CD118FP)
               var electionData = bySd[key]
               if(electionData!=undefined){
-                var formattedPopup = formatPopup(electionData)
-               // d3.select("#popup").html(d.properties.state+" District "+electionData.district+"<br>dem shares: "+Math.round(electionData.dem_share*100)+"%")
-              }
+                var formattedPopup = formatPopup(electionData,currentSwing) }
           })
+          .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+
+          })
+           .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+           })
 
       svg.append("g")
         .selectAll("path")
@@ -190,8 +192,10 @@ var red = "#F69679"
           .style("stroke", "#fff")
           .style("stroke-width",1)
            .style("cursor","pointer")
-          // .on("mouseover", mouseOver )
-          // .on("mouseleave", mouseLeave )    
+        
+          //  .on("mouseleave", function(){
+          //   d3.select("#popup").style("visibility","hidden")
+          //  })    
     })
 
     
@@ -202,8 +206,8 @@ var red = "#F69679"
       for(var i in data){
         if(data[i].uncontested=="1"){
           uncontested.push(data[i])
-        }
-        var rShareBin = Math.floor((data[i].gop_share)*100)
+        }else{
+          var rShareBin = Math.floor((data[i].gop_share)*100)
         var key = "_"+rShareBin
        // console.log(rShareBin,data[i].gop_share)
         if(Object.keys(bins).indexOf(key)>-1){
@@ -212,6 +216,8 @@ var red = "#F69679"
           bins[key]=[]
           bins[key].push(data[i])
         }
+        }
+       
       }
 
     var height = 250
@@ -228,9 +234,9 @@ var red = "#F69679"
     var uncontested = data.filter(function(d){return d.uncontested=="1"})
     
     var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding).attr("y",padding*3)
-    .style("font-size",32).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
+      .style("font-size",32).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
     var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*3).attr("y",padding*3)
-    .style("font-size",32).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
+      .style("font-size",32).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
 
 
 
@@ -239,45 +245,18 @@ var red = "#F69679"
       var yScale = d3.scaleLinear().domain([0,30]).range([0,30*7])
 
 
-      var zeroBar = histoSvg.append("rect")
-      .attr("x",xScale(.5)-1).attr("y",padding*2)
-      .attr("width",2).attr("height",height-padding*2)
-
-      var zeroButton = histoSvg.append("circle")
-      .attr("cx",xScale(.5)).attr("cy",padding*2)
-      .attr("r",5)
-      .call(d3.drag()
-            .on("start",function(){
-            })  
-            .on("drag",function(e){
-              var threshold = xScale.invert(e.x)
-              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
-              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
-              colorScale.domain([threshold-.5,threshold,threshold+.5])
-              d3.selectAll("circle")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                d3.select(this).attr("fill",colorScale(share))
-              })
-
-              d3.selectAll(".district")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                d3.select(this).attr("fill",colorScale(share))
-              })
-       
-
-              demTally.text(dem)
-              repTally.text(rep)
-              d3.select(this).attr("cx",e.x)
-              zeroBar.attr("x",e.x)
-            })  
-            .on("end",function(){
-            })
-      )
+      
 
 
-      var xAxis = d3.axisBottom().scale(xScale)
+      var xAxis = d3.axisBottom().scale(xScale).tickFormat(function(d){
+        if(d-.5<0){
+          return "+"+Math.abs(Math.round((d-.5)*200))+"% D"
+        }else if (d-.5>0){
+          return "+"+Math.abs(Math.round((d-.5)*200))+"% R"
+        }else{
+          return "0"
+        }
+      })
 
       histoSvg.append("g").call(xAxis)
       .attr("transform","translate(0,"+(height)+")")
@@ -291,14 +270,169 @@ var red = "#F69679"
         .attr("id",function(d,i){return i})
         .attr("r",grid/2-1)
         .attr("fill",function(d){
+          if(d.uncontested=="1"){
+            return "black"
+          }
           return colorScale(d.gop_share)
         })
+        .style("cursor","pointer")
         .attr("cx",function(d,i){
           return xScale(parseInt(b.replace("_",""))/100)})
         .attr("cy",function(d,i){return height-yScale(i)-grid/2})
         .on("mouseover",function(e,d){
+          formatPopup(d,currentSwing)
         })
+        .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+
+          })
+        .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+           })
       }
+
+      var zeroBar = histoSvg.append("rect")
+        .attr("x",xScale(.5)).attr("y",padding*2)
+        .attr("width",1).attr("height",height-padding*2)
+
+      var zeroLabel = histoSvg.append("text").text("National Swing").attr("text-anchor","middle")
+        .attr("x",xScale(.5)-1).attr("y",padding*2-25).attr("cursor","pointer")
+        .call(d3.drag()
+            .on("start",function(){
+            })  
+            .on("drag",function(e){
+              var threshold = xScale.invert(e.x)
+              d3.select(".dragCircle").attr("cx",e.x)
+
+              var swingValue = 0
+              if(threshold-.5>0){
+                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+              }else if(threshold-.5<0){
+                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+              }
+              currentSwing = swingValue
+              zeroValue.text(swingValue).attr("x",e.x)
+              zeroLabel.attr("x",e.x)
+              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+              colorScale.domain([threshold-.5,threshold,threshold+.5])
+              d3.selectAll("circle")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                d3.select(this).attr("fill",colorScale(share))
+              })
+
+              d3.selectAll(".district")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                if(d3.select(this).attr("fill")!="#fff"){
+                  d3.select(this).attr("fill",colorScale(share))
+
+                }
+              })
+       
+
+              demTally.text(dem)
+              repTally.text(rep)
+              d3.select(this).attr("cx",e.x)
+              zeroBar.attr("x",e.x)
+            })  
+            .on("end",function(){
+            })
+      )
+      var zeroValue = histoSvg.append("text").text("0").attr("text-anchor","middle")
+        .attr("x",xScale(.5)-1).attr("y",padding*2-10).attr("cursor","pointer")
+        .call(d3.drag()
+            .on("start",function(){
+            })  
+            .on("drag",function(e){
+              var threshold = xScale.invert(e.x)
+              d3.select(".dragCircle").attr("cx",e.x)
+
+              var swingValue = 0
+              if(threshold-.5>0){
+                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+              }else if(threshold-.5<0){
+                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+              }
+              currentSwing = swingValue
+              zeroValue.text(swingValue).attr("x",e.x)
+              zeroLabel.attr("x",e.x)
+              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+              colorScale.domain([threshold-.5,threshold,threshold+.5])
+              d3.selectAll("circle")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                d3.select(this).attr("fill",colorScale(share))
+              })
+
+              d3.selectAll(".district")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                if(d3.select(this).attr("fill")!="#fff"){
+                  d3.select(this).attr("fill",colorScale(share))
+
+                }
+              })
+       
+
+              demTally.text(dem)
+              repTally.text(rep)
+              d3.select(this).attr("cx",e.x)
+              zeroBar.attr("x",e.x)
+            })  
+            .on("end",function(){
+            })
+      )
+      var zeroButton = histoSvg.append("circle")
+        .attr("cx",xScale(.5)).attr("cy",padding*2)
+        .attr("r",5)
+        .attr("class","dragCircle")
+        .attr("cursor","pointer")
+        .call(d3.drag()
+            .on("start",function(){
+            })  
+            .on("drag",function(e){
+              var threshold = xScale.invert(e.x)
+
+              var swingValue = 0
+              if(threshold-.5>0){
+                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+              }else if(threshold-.5<0){
+                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+              }
+              currentSwing = swingValue
+              zeroValue.text(swingValue).attr("x",e.x)
+              zeroLabel.attr("x",e.x)
+              d3.select(this).attr("cx",e.x)
+              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+              colorScale.domain([threshold-.5,threshold,threshold+.5])
+              d3.selectAll("circle")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                d3.select(this).attr("fill",colorScale(share))
+              })
+
+              d3.selectAll(".district")
+              .each(function(d){
+                var share = d3.select(this).attr("gopShare")
+                if(d3.select(this).attr("fill")!="#fff"){
+                  d3.select(this).attr("fill",colorScale(share))
+
+                }
+              })
+       
+
+              demTally.text(dem)
+              repTally.text(rep)
+              d3.select(this).attr("cx",e.x)
+              zeroBar.attr("x",e.x)
+            })  
+            .on("end",function(){
+            })
+      )
     }
 
 function drawKey(data){
@@ -340,21 +474,52 @@ function drawKey(data){
   labels.attr("transform","translate(50,80)")
 }
 
-    function formatPopup(data){
-        var dem  = data.candidatedem+"<br>Share:"+Math.round(data.dem_share*100)+"% <br>"+data.dem_votes+" Votes"
-        var gop = data.candidategop+"<br>Share:"+Math.round(data.gop_share*100)+"% <br>"+data.gop_votes+" Votes"
-        var swing = data.dem_share-data.gop_share
+    function formatPopup(data,natSwing){
+      
+      if(natSwing==0){
+          d3.select("#popSwing").html("No national swing in effect")
+          var dem  = data.candidatedem+"<br>Share:"+Math.round(data.dem_share*100)+"% "+data.dem_votes+" Votes"
+          var gop = data.candidategop+"<br>Share: "+Math.round(data.gop_share*100)+"% "+data.gop_votes+" Votes"
+          var swing = (data.dem_share-data.gop_share)*100
+          var swingVotes = data.dem_votes-data.gop_votes
+
+      }else{
+          d3.select("#popSwing").html("Swing "+natSwing)
+          var totalVotes  = data.totalvotes
+          if(natSwing.indexOf("D")>-1){
+            var newDPercent = data.dem_share*100+parseInt(natSwing.replace("D","").replace("+",""))
+            var newDVotes = Math.round(totalVotes*newDPercent/100)
+            var dem  = data.candidatedem+"<br>Share: "+Math.round(newDPercent)+"% "+newDVotes+" Votes"
+
+            var newRPercent = 100-newDPercent
+            var newRVotes = totalVotes-newDVotes
+            var gop = data.candidategop+"<br>Share: "+Math.round(newRPercent)+"% "+newRVotes+" Votes"
+          }else{
+            var newDPercent = data.dem_share*100-parseInt(natSwing.replace("R","").replace("+",""))
+            var newDVotes = Math.round(totalVotes*newDPercent/100)
+            var dem  = data.candidatedem+"<br>Share: "+Math.round(newDPercent)+"% "+newDVotes+" Votes"
+
+            var newRPercent = 100-newDPercent
+            var newRVotes = totalVotes-newDVotes
+            var gop = data.candidategop+"<br>Share: "+Math.round(newRPercent)+"% "+newRVotes+" Votes"
+          }
+
+          var swing = newDPercent-newRPercent
+          var swingVotes = newDVotes-newRVotes
+
+      }
+        
         var swingColor = "black"
 
-        if(swing>0){
+      if(swing>0){
         var swingColor = blue
-        var swingText = Math.abs(Math.round((data.dem_share-data.gop_share)*10000)/100)+"<br>"+Math.abs(data.dem_votes-data.gop_votes)+" Votes<br>Democrat"
-       }else if (swing<0){
+        var swingText = "Democrat<br>+"+Math.abs(Math.round(swing))+"<br>+"+Math.abs(Math.round(swingVotes))+" Votes"
+      }else if (swing<0){
         var swingColor = red
-        var swingText = Math.abs(Math.round((data.dem_share-data.gop_share)*10000)/100)+"<br>"+Math.abs(data.dem_votes-data.gop_votes)+" Votes<br>GOP"
-       }
+        var swingText = "GOP<br>"+Math.abs(Math.round(swing))+"<br>"+Math.abs(Math.round(swingVotes))+" Votes"
+      }
 
-       d3.select("#popTitle").html(data.state.split(".  ")[1]+" District "+data.district)
+        d3.select("#popTitle").html(data.state.split(".  ")[1]+" District "+data.district)
         d3.select("#dem").html(dem).style("color",blue)
         d3.select("#gop").html(gop).style("color",red)
         if(data.uncontested=="1"){
