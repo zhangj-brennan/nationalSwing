@@ -222,12 +222,42 @@ var currentSwing = 0
 
     var height = 250
     var width = 800
-    var padding = 40
+    var padding = 60
     var grid = 8
     var histoSvg = d3.select("#histo").append("svg")
     .attr("width",width).attr("height", height)
     .append("g")
     .attr("transform","translate("+padding+","+(-padding)+")")
+
+    histoSvg.selectAll(".uncontested")
+    .data(uncontested.sort(function(a,b){
+      return parseFloat(a.gop_share)- parseFloat(b.gop_share)
+    }))
+    .enter()
+    .append("circle")
+    .attr("r",grid/2-1)
+    .attr("cx",function(d,i){return i*grid+75})
+    .attr("fill","#fff")
+    .attr("stroke","black")
+    .attr("cy",function(d,i){return height+50})
+    .style("cursor","pointer")
+    .attr("fill",function(d){
+          return colorScale(d.gop_share)
+        })
+    .on("mouseover",function(e,d){
+          formatPopup(d,currentSwing)
+        })
+        .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+          })
+        .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+          })
+
+    histoSvg//.selectAll(".uncontestedLabel")
+    .append("text").text("Uncontested: ").attr("x",0).attr("y",height+53)
+    .attr("fill","black").attr("class","uncontestedLabel")
+    .style("font-size","11px")
 
     var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share>.5}).length
     var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>.5}).length
@@ -238,15 +268,12 @@ var currentSwing = 0
     var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*3).attr("y",padding*3)
       .style("font-size",32).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
 
-
-
       var xScale = d3.scaleLinear().domain([0,1]).range([0,width-padding*2])
 
       var yScale = d3.scaleLinear().domain([0,30]).range([0,30*7])
 
 
-      
-
+    
 
       var xAxis = d3.axisBottom().scale(xScale).tickFormat(function(d){
         if(d-.5<0){
