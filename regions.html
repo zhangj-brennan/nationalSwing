@@ -135,7 +135,7 @@ function drawTotals(){
         dem+=totalByRegion[i].dem
         gop+=totalByRegion[i].gop
     }
-    console.log(dem,gop)
+   // console.log(dem,gop)
 
     d3.select("#totals").html("<b>"+dem+"</b> D | <b>"+gop+"</b> R")
     return {dem:dem,gop:gop}
@@ -393,7 +393,7 @@ function drawTotals(){
               thresholdsByRegion[region]=threshold
 
               var swingValue = 0
-              console.log(threshold)
+             // console.log(threshold)
 
               if(threshold>0.5){
                 swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
@@ -418,7 +418,7 @@ function drawTotals(){
               totalByRegion[region]["dem"]=dem
               totalByRegion[region]["gop"]=rep
 
-              console.log(dem+rep)
+              //console.log(dem+rep)
               drawTotals()
 
               colorScale.domain([threshold-.5,threshold,threshold+.5])
