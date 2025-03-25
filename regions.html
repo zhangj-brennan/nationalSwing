@@ -116,6 +116,12 @@ var currentSwing = 0
         Midwest:{dem:0,gop:0},
         West:{dem:0,gop:0}
     }
+    var thresholdsByRegion = {
+      South:.5,
+        Northeast:.5,
+        Midwest:.5,
+        West:.5
+    }
 
 function drawTotals(){
     var dem = 0
@@ -264,9 +270,7 @@ function drawTotals(){
      
       var bins = {}
       for(var i in data){
-        if(data[i].uncontested=="1"){
-          uncontested.push(data[i])
-        }else{
+   
           var rShareBin = Math.floor((data[i].gop_share)*100)
         var key = "_"+rShareBin
        // console.log(rShareBin,data[i].gop_share)
@@ -276,7 +280,7 @@ function drawTotals(){
           bins[key]=[]
           bins[key].push(data[i])
         }
-        }
+        
        
       }
 
@@ -324,9 +328,8 @@ function drawTotals(){
     .attr("fill","black").attr("class","uncontestedLabel")
     .style("font-size","11px")
 
-    var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share>.5}).length
-    var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>.5}).length
-    var uncontested = data.filter(function(d){return d.uncontested=="1"})
+    var dem =data.filter(function(d){return d.dem_share>.5}).length
+    var rep = data.filter(function(d){return d.gop_share>.5}).length
 
     totalByRegion[region]["dem"]=dem
     totalByRegion[region]["gop"]=rep
@@ -363,10 +366,15 @@ function drawTotals(){
         .attr("gopShare",function(d){return d.gop_share})
         .attr("id",function(d,i){return i})
         .attr("r",grid/2-1)
-        .attr("fill",function(d){
+        .attr("stroke",function(d){
           if(d.uncontested=="1"){
             return "black"
+          }else{
+            return "none"
           }
+        })
+        .attr("fill",function(d){
+
           return colorScale(d.gop_share)
         })
         .style("cursor","pointer")
@@ -404,34 +412,41 @@ function drawTotals(){
             .on("drag",function(e){
 
               var threshold = xScale.invert(e.x)
+              
+              
+              thresholdsByRegion[region]=threshold
 
               var swingValue = 0
-              if(threshold-.5>0){
+              console.log(threshold)
+
+              if(threshold>0.5){
                 swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
-              }else if(threshold-.5<0){
+              }else if(threshold<.5){
                 swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+              }else if(threshold==.5){
+                threshold = .51
+                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+
               }
               currentSwing = swingValue
               zeroValue.text(swingValue).attr("x",e.x)
               d3.select(this).attr("cx",e.x)
-              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
-              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+
+
+              var dem =data.filter(function(d){
+                return parseFloat(d.dem_share)<1-threshold}).length
+
+                var rep = data.filter(function(d){
+                  return parseFloat(d.dem_share)>1-threshold}).length
+
               totalByRegion[region]["dem"]=dem
-    totalByRegion[region]["gop"]=rep
-    drawTotals()
+              totalByRegion[region]["gop"]=rep
+
+              console.log(dem+rep)
+              drawTotals()
 
               colorScale.domain([threshold-.5,threshold,threshold+.5])
-            //   d3.selectAll("circle")
-            //   .each(function(d){
-            //     if(d.state!=undefined){
-            //         console.log(d,d.state.split(".  ")[1])
-            //         var share = d3.select(this).attr("gopShare")
-            //     }
-            //     // if(regions[region].indexOf(d.state.split(".  ")[1])>-1){
-            //     //     console.log("test")
-            //     //     d3.select(this).attr("fill",colorScale(share))
-            //     // }
-            //   })
+      
 
               d3.selectAll(".district")
               .each(function(d){
@@ -442,8 +457,9 @@ function drawTotals(){
                     }
                 }
               })
-              demTally.text(dem)
-              repTally.text(rep)
+              demTally.text(rep)
+              repTally.text(dem)
+
               d3.select(this).attr("cx",e.x)
               zeroBar.attr("x",e.x)
               zeroButton.attr("x",e.x)
