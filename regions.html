@@ -284,10 +284,10 @@ function drawTotals(){
        
       }
 
-    var height = 100
+    var height = 120
     var width = 600
     var padding = 40
-    var grid = 7
+    var grid = 6
     var histoSvg = d3.select("#histo").append("svg")
     .attr("width",width).attr("height", height)
     .append("g")
@@ -298,35 +298,9 @@ function drawTotals(){
 
    
 
-    histoSvg.selectAll(".uncontested")
-    .data(uncontested.sort(function(a,b){
-      return parseFloat(a.gop_share)- parseFloat(b.gop_share)
-    }))
-    .enter()
-    .append("circle")
-    .attr("r",grid/2-1)
-    .attr("cx",function(d,i){return i*grid+75})
-    .attr("fill","#fff")
-    .attr("stroke","black")
-    .attr("cy",function(d,i){return height+30})
-    .style("cursor","pointer")
-    .attr("fill",function(d){
-          return colorScale(d.gop_share)
-        })
-    .on("mouseover",function(e,d){
-          formatPopup(d,currentSwing)
-        })
-        .on("mousemove",function(e){
-            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
-          })
-        .on("mouseout",function(e){
-            d3.select("#popup").style("visibility","hidden")
-          })
+    
 
-    histoSvg//.selectAll(".uncontestedLabel")
-    .append("text").text("Uncontested: ").attr("x",0).attr("y",height+33)
-    .attr("fill","black").attr("class","uncontestedLabel")
-    .style("font-size","11px")
+  
 
     var dem =data.filter(function(d){return d.dem_share>.5}).length
     var rep = data.filter(function(d){return d.gop_share>.5}).length
@@ -343,7 +317,7 @@ function drawTotals(){
 
       var xScale = d3.scaleLinear().domain([0,1]).range([0,width-padding*2])
 
-      var yScale = d3.scaleLinear().domain([0,30]).range([0,30*7])
+      var yScale = d3.scaleLinear().domain([0,30]).range([0,height])
 
       var xAxis = d3.axisBottom().scale(xScale).tickFormat(function(d){
         if(d-.5<0){
@@ -403,7 +377,7 @@ function drawTotals(){
       
       var zeroButton = histoSvg.append("circle")
         .attr("cx",xScale(.5)).attr("cy",padding*2)
-        .attr("r",5)
+        .attr("r",grid)
         .attr("class","dragCircle")
         .attr("cursor","pointer")
         .call(d3.drag()
