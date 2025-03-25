@@ -96,7 +96,7 @@ var currentSwing = 0
     var regions = {"South": ["Alabama","Arkansas","Florida","Georgia","Kentucky","Louisiana","Mississippi","North Carolina","Oklahoma","South Carolina","Tennessee","Texas","Virginia","West Virginia"],
 "Northeast": ["Connecticut","Delaware","Massachusetts","Maryland","Maine","New Hampshire","New Jersey","New York","Pennsylvania","Rhode Island","Vermont"],
 "Mountain": ["Arizona","Colorado","Idaho","Montana","New Mexico","Nevada","Utah","Wyoming"],
-"West": ["Alaska","California","Hawaii","Oklahoma","Washington"],
+"West": ["Alaska","California","Hawaii","Washington","Oregon"],
 "Midwest": ["Illinois","Indiana","Iowa","Kansas","Michigan","Minnesota","Missouri","Nebraska","North Dakota","Ohio","South Dakota","Wisconsin"]}
 
 
@@ -209,6 +209,20 @@ function drawTotals(){
           .attr("d", d3.geoPath()
             .projection(projection)
           )
+          .style("stroke",function(d){
+  
+
+          if(isNaN(d.properties.CD118FP)!=true){
+                var key = d.properties.state+parseInt(d.properties.CD118FP)
+              var electionData = bySd[key]
+              if(electionData!=undefined){
+                  if(electionData.uncontested=="1"){
+                  return "black"
+                  }
+                  return "none"
+                }
+            }  
+        })
           // set the color of each country
           .attr("fill", function (d) {
             if(isNaN(d.properties.CD118FP)!=true){
@@ -232,7 +246,7 @@ function drawTotals(){
             } 
           })
           .style("cursor","pointer")
-          .style("stroke", "#fff")
+          //.style("stroke", "#fff")
           .attr("stroke-width",.2)
           .style("opacity", 1)
           .on("mouseover",function(e,d){
