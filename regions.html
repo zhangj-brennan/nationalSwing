@@ -93,11 +93,14 @@ var currentSwing = 0
       .range([blue,"#ddd",red]);
     
     // Load external data and boot
-    var regions = {
-"Northeast":["Connecticut","Maine","Massachusetts","New Hampshire","Rhode Island","Vermont","New Jersey","New York","Pennsylvania"],
-"Midwest":["Illinois","Indiana","Michigan","Ohio","Wisconsin","Iowa","Kansas","Minnesota","Missouri","Nebraska","North Dakota","South Dakota"],
-"South":["Delaware","District of Columbia","Florida","Georgia","Maryland","North Carolina","South Carolina","Virginia","West Virginia","Alabama","Kentucky","Mississippi","Tennessee","Arkansas","Louisiana","Oklahoma","Texas"],
-"West":["Arizona","Colorado","Idaho","Montana","Nevada","New Mexico","Utah","Wyoming","Alaska","California","Hawaii","Oregon","Washington"]}
+    var regions = {"South": ["Alabama","Arkansas","Florida","Georgia","Kentucky","Louisiana","Mississippi","North Carolina","Oklahoma","South Carolina","Tennessee","Texas","Virginia","West Virginia"],
+"Northeast": ["Connecticut","Delaware","Massachusetts","Maryland","Maine","New Hampshire","New Jersey","New York","Pennsylvania","Rhode Island","Vermont"],
+"Mountain": ["Arizona","Colorado","Idaho","Montana","New Mexico","Nevada","Utah","Wyoming"],
+"West": ["Alaska","California","Hawaii","Oklahoma","Washington"],
+"Midwest": ["Illinois","Indiana","Iowa","Kansas","Michigan","Minnesota","Missouri","Nebraska","North Dakota","Ohio","South Dakota","Wisconsin"]}
+
+
+
 
     function filterByRegion(data,region){
        
@@ -113,14 +116,16 @@ var currentSwing = 0
     var totalByRegion = {
         South:{dem:0,gop:0},
         Northeast:{dem:0,gop:0},
-        Midwest:{dem:0,gop:0},
-        West:{dem:0,gop:0}
+        Mountain:{dem:0,gop:0},
+        West:{dem:0,gop:0},
+        Midwest:{dem:0,gop:0}
     }
     var thresholdsByRegion = {
       South:.5,
         Northeast:.5,
-        Midwest:.5,
-        West:.5
+        Mountain:.5,
+        West:.5,
+        Midwest:.5
     }
 
 function drawTotals(){
@@ -147,13 +152,15 @@ function drawTotals(){
 
         var south = filterByRegion(election,"South")
         var northeast = filterByRegion(election,"Northeast")
-        var midwest = filterByRegion(election,"Midwest")
+        var mountain = filterByRegion(election,"Mountain")
         var west = filterByRegion(election,"West")
+        var midwest = filterByRegion(election,"Midwest")
 
         drawHisto(south,"South")
         drawHisto(northeast,"Northeast")
-        drawHisto(midwest,"Midwest")
+        drawHisto( mountain,"Mountain")
         drawHisto(west,"West")
+        drawHisto(midwest,"Midwest")
 
 
 
@@ -297,11 +304,6 @@ function drawTotals(){
     .attr("x",-40).attr("y",60).attr("font-size","24px").style("font-weight",700)
 
    
-
-    
-
-  
-
     var dem =data.filter(function(d){return d.dem_share>.5}).length
     var rep = data.filter(function(d){return d.gop_share>.5}).length
 
