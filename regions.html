@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  #popup{
+    visibility:hidden;
+    position:absolute;
+border:1px solid black;
+width:250px;
+font-size:11px;
+background-color:rgba(255,255,255,.8);
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  svg text{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  #popTitle{
+    border-bottom:1px solid black;
+    font-size:18px;
+    font-weight:700;
+    padding:5px;
+    height:20px;
+
+  }
+  #popSwing{
+    font-weight:700;
+    padding:5px;
+    font-size:12px;
+  }
+  #dem{
+    margin:0px;
+    padding:5px
+  }
+  #gop{
+    margin:0px;
+    padding:5px;
+  }
+  #swing{
+    border-top:1px solid black;
+    text-align:center;
+    font-size:14px;
+    font-weight:700;
+    padding:5px;
+  }
+  #histo{
+    width:600px;
+  }
+#totals{
+    font-size:24px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+width:600px;
+text-align:center;
+}
+</style>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v7.js"></script>
+
+<!-- Create an element where the map will take place -->
+ 
+<div id="key"></div>
+<div id="totals">totals</div>
+<div id="histo"></div>
+<svg id="my_dataviz" width="950" height="500"></svg>
+<div id="popup">
+  <div id="popTitle">title</div>
+  <div id="popSwing">nationalSwing</div>
+  <div id="dem">dem</div>
+  <div id="gop">gop</div>
+    <div id="swing">swing</div>
+   </div>
+<script>
+
+
+
+var blue = "#007194"
+var red = "#F69679"
+var currentSwing = 0
+    // The svg
+    const svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+    
+    // Map and projection
+    const path = d3.geoPath();
+    const projection = d3.geoAlbersUsa()
+    //   .scale(200)
+    //   .center([-98,39])
+    //   .translate([width / 2, height / 2]);
+    
+    // Data and color scale
+    const data = new Map();
+    const colorScale = d3.scaleLinear()
+      .domain([0,.5,1])
+      .range([blue,"#ddd",red]);
+    
+    // Load external data and boot
+    var regions = {
+"Northeast":["Connecticut","Maine","Massachusetts","New Hampshire","Rhode Island","Vermont","New Jersey","New York","Pennsylvania"],
+"Midwest":["Illinois","Indiana","Michigan","Ohio","Wisconsin","Iowa","Kansas","Minnesota","Missouri","Nebraska","North Dakota","South Dakota"],
+"South":["Delaware","District of Columbia","Florida","Georgia","Maryland","North Carolina","South Carolina","Virginia","West Virginia","Alabama","Kentucky","Mississippi","Tennessee","Arkansas","Louisiana","Oklahoma","Texas"],
+"West":["Arizona","Colorado","Idaho","Montana","Nevada","New Mexico","Utah","Wyoming","Alaska","California","Hawaii","Oregon","Washington"]}
+
+    function filterByRegion(data,region){
+       
+        var regionStates = regions[region]
+        var filtered = data.filter(function(d){
+          //  console.log(d.state.split(".  ")[1])
+           return regionStates.indexOf(d.state.split(".  ")[1])>-1
+        })
+    return filtered
+    }
+
+
+    var totalByRegion = {
+        South:{dem:0,gop:0},
+        Northeast:{dem:0,gop:0},
+        Midwest:{dem:0,gop:0},
+        West:{dem:0,gop:0}
+    }
+
+function drawTotals(){
+    var dem = 0
+    var gop = 0
+    for(var i in totalByRegion){
+        dem+=totalByRegion[i].dem
+        gop+=totalByRegion[i].gop
+    }
+    console.log(dem,gop)
+
+    d3.select("#totals").html("<b>"+dem+"</b> D | <b>"+gop+"</b> R")
+    return {dem:dem,gop:gop}
+}
+
+    Promise.all([
+    d3.json("congressional_2022_s.geojson"),
+    d3.json("states.geojson"),
+    d3.csv("House election results 2022.csv")]).then(function(loadData){
+
+        let topo = loadData[0]
+        let states = loadData[1]
+        let election = loadData[2]
+
+        var south = filterByRegion(election,"South")
+        var northeast = filterByRegion(election,"Northeast")
+        var midwest = filterByRegion(election,"Midwest")
+        var west = filterByRegion(election,"West")
+
+        drawHisto(south,"South")
+        drawHisto(northeast,"Northeast")
+        drawHisto(midwest,"Midwest")
+        drawHisto(west,"West")
+
+
+
+        var bySd = {}
+        for(var e in election){
+          if(election[e].state!=undefined){
+            var key = election[e].state.split(".  ")[1]+election[e].district
+            bySd[key]=election[e]
+          }
+        }
+
+       // console.log(bySd)
+
+        let mouseOver = function(d) {
+        d3.selectAll(".Country")
+          .transition()
+          .duration(200)
+          .style("opacity", .5)
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .style("opacity", .3)
+          .style("stroke", "black")
+      }
+    
+      let mouseLeave = function(d) {
+        d3.selectAll(".Country")
+          .transition()
+          .duration(200)
+          .style("opacity", .8)
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .style("stroke", "transparent")
+      }
+
+
+      // Draw the map
+      svg.append("g")
+        .selectAll(".district")
+        .data(topo.features)
+        .enter()
+        .append("path")
+        .attr("class","district")
+          // draw each country
+          .attr("d", d3.geoPath()
+            .projection(projection)
+          )
+          // set the color of each country
+          .attr("fill", function (d) {
+            if(isNaN(d.properties.CD118FP)!=true){
+                var key = d.properties.state+parseInt(d.properties.CD118FP)
+              var electionData = bySd[key]
+              if(electionData!=undefined){
+                  if(electionData.uncontested=="1"){
+                    return "#fff"
+                  }
+                  return colorScale(electionData.gop_share);
+              }
+            }            
+          })
+          .attr("gopShare",function(d){
+            if(isNaN(d.properties.CD118FP)!=true){
+                var key = d.properties.state+parseInt(d.properties.CD118FP)
+              var electionData = bySd[key]
+              if(electionData!=undefined){
+                 return electionData.gop_share
+              }
+            } 
+          })
+          .style("cursor","pointer")
+          .style("stroke", "#fff")
+          .attr("stroke-width",.2)
+          .style("opacity", 1)
+          .on("mouseover",function(e,d){
+            var key = d.properties.state+parseInt(d.properties.CD118FP)
+              var electionData = bySd[key]
+              if(electionData!=undefined){
+                var formattedPopup = formatPopup(electionData,currentSwing) }
+          })
+          .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+
+          })
+           .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+           })
+
+      svg.append("g")
+        .selectAll("path")
+        .data(states.features)
+        .enter()
+        .append("path")
+          // draw each country
+          .attr("d", d3.geoPath()
+            .projection(projection)
+          )
+          // set the color of each country
+          .attr("fill", function (d) {
+            return "none" 
+          })
+          .style("stroke", "#fff")
+          .style("stroke-width",1)
+           .style("cursor","pointer")
+        
+          //  .on("mouseleave", function(){
+          //   d3.select("#popup").style("visibility","hidden")
+          //  })    
+    })
+
+    
+    function drawHisto(data,region){
+      var uncontested = []
+     
+      var bins = {}
+      for(var i in data){
+        if(data[i].uncontested=="1"){
+          uncontested.push(data[i])
+        }else{
+          var rShareBin = Math.floor((data[i].gop_share)*100)
+        var key = "_"+rShareBin
+       // console.log(rShareBin,data[i].gop_share)
+        if(Object.keys(bins).indexOf(key)>-1){
+          bins[key].push(data[i])
+        }else{
+          bins[key]=[]
+          bins[key].push(data[i])
+        }
+        }
+       
+      }
+
+    var height = 100
+    var width = 600
+    var padding = 40
+    var grid = 7
+    var histoSvg = d3.select("#histo").append("svg")
+    .attr("width",width).attr("height", height)
+    .append("g")
+    .attr("transform","translate("+padding+","+(-padding)+")")
+
+    histoSvg.append("text").text(region)
+    .attr("x",-40).attr("y",60).attr("font-size","24px").style("font-weight",700)
+
+   
+
+    histoSvg.selectAll(".uncontested")
+    .data(uncontested.sort(function(a,b){
+      return parseFloat(a.gop_share)- parseFloat(b.gop_share)
+    }))
+    .enter()
+    .append("circle")
+    .attr("r",grid/2-1)
+    .attr("cx",function(d,i){return i*grid+75})
+    .attr("fill","#fff")
+    .attr("stroke","black")
+    .attr("cy",function(d,i){return height+30})
+    .style("cursor","pointer")
+    .attr("fill",function(d){
+          return colorScale(d.gop_share)
+        })
+    .on("mouseover",function(e,d){
+          formatPopup(d,currentSwing)
+        })
+        .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+          })
+        .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+          })
+
+    histoSvg//.selectAll(".uncontestedLabel")
+    .append("text").text("Uncontested: ").attr("x",0).attr("y",height+33)
+    .attr("fill","black").attr("class","uncontestedLabel")
+    .style("font-size","11px")
+
+    var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share>.5}).length
+    var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>.5}).length
+    var uncontested = data.filter(function(d){return d.uncontested=="1"})
+
+    totalByRegion[region]["dem"]=dem
+    totalByRegion[region]["gop"]=rep
+    drawTotals()
+
+    var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding*3).attr("y",padding*1.5)
+      .style("font-size",20).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
+
+    var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*4).attr("y",padding*1.5)
+      .style("font-size",20).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
+
+      var xScale = d3.scaleLinear().domain([0,1]).range([0,width-padding*2])
+
+      var yScale = d3.scaleLinear().domain([0,30]).range([0,30*7])
+
+      var xAxis = d3.axisBottom().scale(xScale).tickFormat(function(d){
+        if(d-.5<0){
+          return "+"+Math.abs(Math.round((d-.5)*200))+"% D"
+        }else if (d-.5>0){
+          return "+"+Math.abs(Math.round((d-.5)*200))+"% R"
+        }else{
+          return "0"
+        }
+      })
+
+      histoSvg.append("g").call(xAxis)
+      .attr("transform","translate(0,"+(height)+")")
+      for(var b in bins){
+        histoSvg.selectAll("."+b)
+        .data(bins[b])
+        .attr("class",b)
+        .enter()
+        .append("circle")
+        .attr("gopShare",function(d){return d.gop_share})
+        .attr("id",function(d,i){return i})
+        .attr("r",grid/2-1)
+        .attr("fill",function(d){
+          if(d.uncontested=="1"){
+            return "black"
+          }
+          return colorScale(d.gop_share)
+        })
+        .style("cursor","pointer")
+        .attr("cx",function(d,i){
+          return xScale(parseInt(b.replace("_",""))/100)})
+        .attr("cy",function(d,i){return height-yScale(i)-grid/2})
+        .on("mouseover",function(e,d){
+          formatPopup(d,currentSwing)
+        })
+        .on("mousemove",function(e){
+            d3.select("#popup").style("left",parseInt(e.pageX)+10+"px").style("top",parseInt(e.pageY)+10+"px").style("visibility","visible")
+
+          })
+        .on("mouseout",function(e){
+            d3.select("#popup").style("visibility","hidden")
+           })
+      }
+
+      var zeroBar = histoSvg.append("rect")
+        .attr("x",xScale(.5)).attr("y",padding*2)
+        .attr("width",1).attr("height",height-padding*2)
+
+      
+      var zeroValue = histoSvg.append("text").text("0").attr("text-anchor","middle")
+        .attr("x",xScale(.5)-1).attr("y",padding*2-10).attr("cursor","pointer")
+      
+      var zeroButton = histoSvg.append("circle")
+        .attr("cx",xScale(.5)).attr("cy",padding*2)
+        .attr("r",5)
+        .attr("class","dragCircle")
+        .attr("cursor","pointer")
+        .call(d3.drag()
+            .on("start",function(){
+            })  
+            .on("drag",function(e){
+
+              var threshold = xScale.invert(e.x)
+
+              var swingValue = 0
+              if(threshold-.5>0){
+                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+              }else if(threshold-.5<0){
+                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+              }
+              currentSwing = swingValue
+              zeroValue.text(swingValue).attr("x",e.x)
+              d3.select(this).attr("cx",e.x)
+              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+              totalByRegion[region]["dem"]=dem
+    totalByRegion[region]["gop"]=rep
+    drawTotals()
+
+              colorScale.domain([threshold-.5,threshold,threshold+.5])
+            //   d3.selectAll("circle")
+            //   .each(function(d){
+            //     if(d.state!=undefined){
+            //         console.log(d,d.state.split(".  ")[1])
+            //         var share = d3.select(this).attr("gopShare")
+            //     }
+            //     // if(regions[region].indexOf(d.state.split(".  ")[1])>-1){
+            //     //     console.log("test")
+            //     //     d3.select(this).attr("fill",colorScale(share))
+            //     // }
+            //   })
+
+              d3.selectAll(".district")
+              .each(function(d){
+                if(regions[region].indexOf(d.properties.state)>-1){
+                        var share = d3.select(this).attr("gopShare")
+                    if(d3.select(this).attr("fill")!="#fff"){
+                    d3.select(this).attr("fill",colorScale(share))
+                    }
+                }
+              })
+              demTally.text(dem)
+              repTally.text(rep)
+              d3.select(this).attr("cx",e.x)
+              zeroBar.attr("x",e.x)
+              zeroButton.attr("x",e.x)
+            })  
+            .on("end",function(){
+            })
+      )
+    }
+
+    function formatPopup(data,natSwing){
+      
+      if(natSwing==0){
+          d3.select("#popSwing").html("No national swing in effect")
+          var dem  = data.candidatedem+"<br>Share:"+Math.round(data.dem_share*100)+"% "+data.dem_votes+" Votes"
+          var gop = data.candidategop+"<br>Share: "+Math.round(data.gop_share*100)+"% "+data.gop_votes+" Votes"
+          var swing = (data.dem_share-data.gop_share)*100
+          var swingVotes = data.dem_votes-data.gop_votes
+
+      }else{
+          d3.select("#popSwing").html("Swing "+natSwing)
+          var totalVotes  = data.totalvotes
+          if(natSwing.indexOf("D")>-1){
+            var newDPercent = data.dem_share*100+parseInt(natSwing.replace("D","").replace("+",""))
+            var newDVotes = Math.round(totalVotes*newDPercent/100)
+            var dem  = data.candidatedem+"<br>Share: "+Math.round(newDPercent)+"% "+newDVotes+" Votes"
+
+            var newRPercent = 100-newDPercent
+            var newRVotes = totalVotes-newDVotes
+            var gop = data.candidategop+"<br>Share: "+Math.round(newRPercent)+"% "+newRVotes+" Votes"
+          }else{
+            var newDPercent = data.dem_share*100-parseInt(natSwing.replace("R","").replace("+",""))
+            var newDVotes = Math.round(totalVotes*newDPercent/100)
+            var dem  = data.candidatedem+"<br>Share: "+Math.round(newDPercent)+"% "+newDVotes+" Votes"
+
+            var newRPercent = 100-newDPercent
+            var newRVotes = totalVotes-newDVotes
+            var gop = data.candidategop+"<br>Share: "+Math.round(newRPercent)+"% "+newRVotes+" Votes"
+          }
+
+          var swing = newDPercent-newRPercent
+          var swingVotes = newDVotes-newRVotes
+
+      }
+        
+        var swingColor = "black"
+
+      if(swing>0){
+        var swingColor = blue
+        var swingText = "Democrat<br>+"+Math.abs(Math.round(swing))+"<br>+"+Math.abs(Math.round(swingVotes))+" Votes"
+      }else if (swing<0){
+        var swingColor = red
+        var swingText = "GOP<br>"+Math.abs(Math.round(swing))+"<br>"+Math.abs(Math.round(swingVotes))+" Votes"
+      }
+
+        d3.select("#popTitle").html(data.state.split(".  ")[1]+" District "+data.district)
+        d3.select("#dem").html(dem).style("color",blue)
+        d3.select("#gop").html(gop).style("color",red)
+        if(data.uncontested=="1"){
+          d3.select("#swing").html("-- <br>Uncontested<br>").style("color","black")
+        }else{
+          d3.select("#swing").html(swingText).style("color",swingColor)
+        }
+    }
+    
+    </script>
