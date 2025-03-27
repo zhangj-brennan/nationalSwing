@@ -42,13 +42,17 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     padding:5px;
   }
   #histo{
-    width:600px;
+    width:430px;
+    display:inline-block;
   }
 #totals{
     font-size:24px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-width:600px;
+width:430px;
 text-align:center;
+}
+#my_dataviz{
+  display:inline-block;
 }
 </style>
 <!-- Load d3.js -->
@@ -59,7 +63,7 @@ text-align:center;
 <div id="key"></div>
 <div id="totals">totals</div>
 <div id="histo"></div>
-<svg id="my_dataviz" width="950" height="500"></svg>
+<svg id="my_dataviz" width="600" height="400"></svg>
 <div id="popup">
   <div id="popTitle">title</div>
   <div id="popSwing">nationalSwing</div>
@@ -91,9 +95,9 @@ var currentSwing = 0
     // Map and projection
     const path = d3.geoPath();
     const projection = d3.geoAlbersUsa()
-    //   .scale(200)
-    //   .center([-98,39])
-    //   .translate([width / 2, height / 2]);
+       .scale(800)
+     //  .center([-98,39])
+       .translate([width / 2, height / 2]);
     
     // Data and color scale
     const data = new Map();
@@ -292,9 +296,9 @@ function drawTotals(){
       }
 
 
-    var height = 120
-    var width = 600
-    var padding = 40
+    var height = 70
+    var width = 430
+    var padding = 20
     var grid = 6
     var histoSvg = d3.select("#histo").append("svg")
     .attr("width",width).attr("height", height)
@@ -302,7 +306,7 @@ function drawTotals(){
     .attr("transform","translate("+padding+","+(-padding)+")")
 
     histoSvg.append("text").text(drawerLabels[region])
-    .attr("x",-40).attr("y",55).attr("font-size","18px").style("font-weight",700)
+    .attr("x",-10).attr("y",30).attr("font-size","14px").style("font-weight",700)
 
    
     var dem =data.filter(function(d){return d.dem_share>.5}).length
@@ -312,11 +316,11 @@ function drawTotals(){
     totalsByDrawer[region]["gop"]=rep
     drawTotals()
 
-    var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding*3).attr("y",padding*2)
-      .style("font-size",20).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
+    var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",0).attr("y",50)
+      .style("font-size",16).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
 
-    var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*3).attr("y",padding*1.5)
-      .style("font-size",20).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
+    var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*2).attr("y",50)
+      .style("font-size",16).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
 
       var xScale = d3.scaleLinear().domain([0,1]).range([0,width-padding*2])
 
@@ -370,19 +374,17 @@ function drawTotals(){
            })
       }
 
-      var zeroBar = histoSvg.append("rect")
-        .attr("x",xScale(.5)).attr("y",padding*2)
-        .attr("width",1).attr("height",height-padding*2)
-
       
       var zeroValue = histoSvg.append("text").text("0").attr("text-anchor","middle")
-        .attr("x",xScale(.5)-1).attr("y",padding*2-10).attr("cursor","pointer")
+        .attr("x",xScale(.5)).attr("y",60).attr("cursor","pointer")
       
-      var zeroButton = histoSvg.append("circle")
-        .attr("cx",xScale(.5)).attr("cy",padding*2)
-        .attr("r",grid)
+      var zeroButton = histoSvg.append("rect")
+        .attr("x",xScale(.5)-3).attr("y",60)
+        .attr("width",6).attr("height",40)
         .attr("class","dragCircle")
         .attr("cursor","pointer")
+        .attr("opacity",.5)
+        .attr("fill","gold")
         .call(d3.drag()
             .on("start",function(){
             })  
@@ -434,7 +436,6 @@ function drawTotals(){
               repTally.text(rep)
 
               d3.select(this).attr("cx",e.x)
-              zeroBar.attr("x",e.x)
               zeroButton.attr("x",e.x)
             })  
             .on("end",function(){
