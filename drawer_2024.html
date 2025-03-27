@@ -69,7 +69,16 @@ text-align:center;
    </div>
 <script>
 
-
+var drawerLabels = {
+//  "0":"0",
+  "0":"At-large",
+   "2":"Independent commission",
+  "3":"Other commission",
+  "4":"Court-drawn",
+   "5":"Legislative trifecta D",
+  "6":"Legislative trifecta R",
+  "7":"Split legislature"
+}
 
 var blue = "#007194"
 var red = "#F69679"
@@ -282,6 +291,7 @@ function drawTotals(){
        
       }
 
+
     var height = 120
     var width = 600
     var padding = 40
@@ -291,8 +301,8 @@ function drawTotals(){
     .append("g")
     .attr("transform","translate("+padding+","+(-padding)+")")
 
-    histoSvg.append("text").text(region)
-    .attr("x",-40).attr("y",60).attr("font-size","24px").style("font-weight",700)
+    histoSvg.append("text").text(drawerLabels[region])
+    .attr("x",-40).attr("y",55).attr("font-size","18px").style("font-weight",700)
 
    
     var dem =data.filter(function(d){return d.dem_share>.5}).length
@@ -302,10 +312,10 @@ function drawTotals(){
     totalsByDrawer[region]["gop"]=rep
     drawTotals()
 
-    var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding*3).attr("y",padding*1.5)
+    var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding*3).attr("y",padding*2)
       .style("font-size",20).attr("fill",blue).style("font-weight",700).attr("text-anchor","middle")
 
-    var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*4).attr("y",padding*1.5)
+    var repTally = histoSvg.append("g").attr("id","repTally").append("text").text(rep).attr("x",width-padding*3).attr("y",padding*1.5)
       .style("font-size",20).attr("fill",red).style("font-weight",700).attr("text-anchor","middle")
 
       var xScale = d3.scaleLinear().domain([0,1]).range([0,width-padding*2])
@@ -442,6 +452,7 @@ function drawTotals(){
     }
 
     function formatPopup(data,natSwing){
+      console.log(data)
       
       if(natSwing==0){
           d3.select("#popSwing").html("No national swing in effect")
