@@ -100,66 +100,26 @@ var currentSwing = 0
 "Midwest": ["Illinois","Indiana","Iowa","Kansas","Michigan","Minnesota","Missouri","Nebraska","North Dakota","Ohio","South Dakota","Wisconsin"]}
 
 
-
-
-    function filterByRegion(data,region){
-       
-        var regionStates = regions[region]
-        var filtered = data.filter(function(d){
-           return regionStates.indexOf(d.state)>-1
-        })
-    return filtered
-    }
-
-
-    var totalByRegion = {
-        South:{dem:0,gop:0},
-        Northeast:{dem:0,gop:0},
-        Mountain:{dem:0,gop:0},
-        West:{dem:0,gop:0},
-        Midwest:{dem:0,gop:0}
-    }
-    var thresholdsByRegion = {
-      South:.5,
-        Northeast:.5,
-        Mountain:.5,
-        West:.5,
-        Midwest:.5
-    }
-
-function drawTotals(){
-    var dem = 0
-    var gop = 0
-    for(var i in totalByRegion){
-        dem+=totalByRegion[i].dem
-        gop+=totalByRegion[i].gop
-    }
-
-    d3.select("#totals").html("<b>"+dem+"</b> D | <b>"+gop+"</b> R")
-    return {dem:dem,gop:gop}
-}
-
+var totalsByDrawer = {}
+    var thresholdsByDrawer = {}
+    var groupedByDrawer
     Promise.all([
     d3.json("test.geojson"),
     d3.json("states.geojson"),
     d3.csv("US 2024 house elections data uniform swing model.csv")]).then(function(loadData){
 
         let topo = loadData[0]
-        let states = loadData[1]
+       // let states = loadData[1]
         let election = loadData[2]
 
 
-        var south = filterByRegion(election,"South")
-        var northeast = filterByRegion(election,"Northeast")
-        var mountain = filterByRegion(election,"Mountain")
-        var west = filterByRegion(election,"West")
-        var midwest = filterByRegion(election,"Midwest")
 
-        drawHisto(south,"South")
-        drawHisto(northeast,"Northeast")
-        drawHisto( mountain,"Mountain")
-        drawHisto(west,"West")
-        drawHisto(midwest,"Midwest")
+       groupedByDrawer= getDrawers(election)
+       for(var g in groupedByDrawer){
+        totalsByDrawer[g]={dem:0,gop:0}
+        thresholdsByDrawer[g]=.5
+        drawHisto(groupedByDrawer[g],+g)
+       }
 
         var bySd = {}
         for(var e in election){
@@ -168,6 +128,7 @@ function drawTotals(){
             bySd[key]=election[e]
           }
         }
+       
 
         let mouseOver = function(d) {
         d3.selectAll(".Country")
@@ -219,6 +180,15 @@ function drawTotals(){
             }  
         })
           // set the color of each country
+          .attr("group",function(d){
+            if(isNaN(d.properties.DISTRICT)!=true){
+                var key = d.properties["state"]+parseInt(d.properties.DISTRICT)
+                var electionData = bySd[key]
+              if(electionData!=undefined){
+                 return electionData.rd_auth
+              }
+            } 
+          })
           .attr("fill", function (d) {
             if(isNaN(d.properties.DISTRICT)!=true){
                 var key = d.properties["state"]+parseInt(d.properties.DISTRICT)
@@ -257,10 +227,43 @@ function drawTotals(){
            .on("mouseout",function(e){
             d3.select("#popup").style("visibility","hidden")
            })
-
     })
 
     
+
+    function getDrawers(data){
+      var grouped = Object.groupBy(data, function(d){
+        return d.rd_auth
+      })
+      return grouped
+}
+
+
+    function filterByRegion(data,region){
+       
+        var regionStates = regions[region]
+        var filtered = data.filter(function(d){
+           return regionStates.indexOf(d["rd_auth"])>-1
+        })
+    return filtered
+    }
+
+
+
+function drawTotals(){
+    var dem = 0
+    var gop = 0
+    for(var i in totalsByDrawer){
+        dem+=totalsByDrawer[i].dem
+        gop+=totalsByDrawer[i].gop
+    }
+
+    d3.select("#totals").html("<b>"+dem+"</b> D | <b>"+gop+"</b> R")
+    return {dem:dem,gop:gop}
+}
+
+
+
     function drawHisto(data,region){
       var uncontested = []
      
@@ -295,8 +298,8 @@ function drawTotals(){
     var dem =data.filter(function(d){return d.dem_share>.5}).length
     var rep = data.filter(function(d){return d.gop_share>.5}).length
 
-    totalByRegion[region]["dem"]=dem
-    totalByRegion[region]["gop"]=rep
+    totalsByDrawer[region]["dem"]=dem
+    totalsByDrawer[region]["gop"]=rep
     drawTotals()
 
     var demTally = histoSvg.append("g").attr("id","demTally").append("text").text(dem).attr("x",padding*3).attr("y",padding*1.5)
@@ -377,8 +380,7 @@ function drawTotals(){
 
               var threshold = xScale.invert(e.x)
               
-              
-              thresholdsByRegion[region]=threshold
+              thresholdsByDrawer[region]=threshold
 
               var swingValue = 0
 
@@ -389,47 +391,52 @@ function drawTotals(){
               }else if(threshold==.5){
                 threshold = .51
                 swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
-
               }
               currentSwing = swingValue
+
               zeroValue.text(swingValue).attr("x",e.x)
               d3.select(this).attr("cx",e.x)
 
-
-          
-
-
               var dem =data.filter(function(d){
                 return parseFloat(d.dem_share)>1-threshold}).length
-
                 var rep = data.filter(function(d){
                   return parseFloat(d.dem_share)<1-threshold}).length
 
-              totalByRegion[region]["dem"]=rep
-              totalByRegion[region]["gop"]=dem
-
+              totalsByDrawer[region]["dem"]=dem
+              totalsByDrawer[region]["gop"]=rep
               drawTotals()
 
               colorScale.domain([threshold-.5,threshold,threshold+.5])
-      
 
               d3.selectAll(".district")
               .each(function(d){
-                if(regions[region].indexOf(d.properties.state)>-1){
-                        var share = d3.select(this).attr("gopShare")
-                    if(d3.select(this).attr("fill")!="#fff"){
+              
+               var group =  d3.select(this).attr("group")
+               if(group==region){
+                var share = d3.select(this).attr("gopShare")
+                d3.select(this).style("stroke","black").style("stroke-width",2)
+                if(d3.select(this).attr("fill")!="#fff"){
                     d3.select(this).attr("fill",colorScale(share))
                     }
-                }
+               }
               })
-              demTally.text(rep)
-              repTally.text(dem)
+              demTally.text(dem)
+              repTally.text(rep)
 
               d3.select(this).attr("cx",e.x)
               zeroBar.attr("x",e.x)
               zeroButton.attr("x",e.x)
             })  
             .on("end",function(){
+
+              d3.selectAll(".district")
+              .each(function(d){
+                
+               var group =  d3.select(this).attr("group")
+               if(group==region){
+                d3.select(this).style("stroke","none").style("stroke-width",2)
+               }
+              })
             })
       )
     }
