@@ -4,11 +4,11 @@
   #popup{
     visibility:hidden;
     position:absolute;
-border:1px solid black;
-width:250px;
-font-size:11px;
-background-color:rgba(255,255,255,.8);
-font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border:1px solid black;
+    width:250px;
+    font-size:11px;
+    background-color:rgba(255,255,255,.8);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   svg text{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -44,9 +44,11 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
 </style>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v7.js"></script>
+<script src="state_abbr.js"></script>
 
 <!-- Create an element where the map will take place -->
- 
+ <div id="note">NOTE: <br>BCJ colors+gray<br>uncontested colored as 25/75<br>
+  no fonts or other styles applied</div>
 <div id="key"></div>
 <div id="histo"></div>
 <svg id="my_dataviz" width="950" height="500"></svg>
@@ -59,7 +61,8 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
    </div>
 <script>
 var blue = "#007194"
-var red = "#F69679"
+var red = "#ED1C24"
+var middleColor = "#ddd"
 var currentSwing = 0
     // The svg
     const svg = d3.select("svg"),
@@ -76,12 +79,12 @@ var currentSwing = 0
     // Data and color scale
     const data = new Map();
     const colorScale = d3.scaleLinear()
-      .domain([0,.5,1])
-      .range([blue,"#ddd",red]);
+      .domain([0,0.3,.5,.7,1])
+      .range([blue,blue,middleColor,red,red]);
     
     // Load external data and boot
     Promise.all([
-    d3.json("congressional_2022_s.geojson"),
+    d3.json("test.geojson"),
     d3.json("states.geojson"),
     d3.csv("House election results 2022.csv")]).then(function(loadData){
 
@@ -137,21 +140,22 @@ var currentSwing = 0
             .projection(projection)
           )
           // set the color of each country
+       
           .attr("fill", function (d) {
-            if(isNaN(d.properties.CD118FP)!=true){
-                var key = d.properties.state+parseInt(d.properties.CD118FP)
-              var electionData = bySd[key]
+            if(isNaN(d.properties.DISTRICT)!=true){
+                var key = d.properties["state"]+parseInt(d.properties.DISTRICT)
+                var electionData = bySd[key]
               if(electionData!=undefined){
-                  if(electionData.uncontested=="1"){
-                    return "#fff"
-                  }
+                  // if(electionData.uncontested=="1"){
+                  //   return "#ddd"
+                  // }
                   return colorScale(electionData.gop_share);
               }
-            }            
+            }
           })
           .attr("gopShare",function(d){
-            if(isNaN(d.properties.CD118FP)!=true){
-                var key = d.properties.state+parseInt(d.properties.CD118FP)
+            if(isNaN(d.properties.DISTRICT)!=true){
+              var key = d.properties["state"]+parseInt(d.properties.DISTRICT)
               var electionData = bySd[key]
               if(electionData!=undefined){
                  return electionData.gop_share
@@ -162,8 +166,8 @@ var currentSwing = 0
           .style("stroke", "#fff")
           .attr("stroke-width",.2)
           .style("opacity", 1)
-          .on("mouseover",function(e,d){
-            var key = d.properties.state+parseInt(d.properties.CD118FP)
+           .on("mouseover",function(e,d){
+            var key = d.properties.state+parseInt(d.properties.DISTRICT)
               var electionData = bySd[key]
               if(electionData!=undefined){
                 var formattedPopup = formatPopup(electionData,currentSwing) }
@@ -175,6 +179,7 @@ var currentSwing = 0
            .on("mouseout",function(e){
             d3.select("#popup").style("visibility","hidden")
            })
+
 
       svg.append("g")
         .selectAll("path")
@@ -196,7 +201,8 @@ var currentSwing = 0
           //  .on("mouseleave", function(){
           //   d3.select("#popup").style("visibility","hidden")
           //  })    
-    })
+          
+     })
 
     
     function drawHisto(data){
@@ -322,51 +328,51 @@ var currentSwing = 0
         .attr("x",xScale(.5)).attr("y",padding*2)
         .attr("width",1).attr("height",height-padding*2)
 
-      var zeroLabel = histoSvg.append("text").text("National Swing").attr("text-anchor","middle")
-        .attr("x",xScale(.5)-1).attr("y",padding*2-25).attr("cursor","pointer")
-        .call(d3.drag()
-            .on("start",function(){
-            })  
-            .on("drag",function(e){
-              var threshold = xScale.invert(e.x)
-              d3.select(".dragCircle").attr("cx",e.x)
+      // var zeroLabel = histoSvg.append("text").text("National Swing").attr("text-anchor","middle")
+      //   .attr("x",xScale(.5)-1).attr("y",padding*2-25).attr("cursor","pointer")
+      //   .call(d3.drag()
+      //       .on("start",function(){
+      //       })  
+      //       .on("drag",function(e){
+      //         var threshold = xScale.invert(e.x)
+      //         d3.select(".dragCircle").attr("cx",e.x)
 
-              var swingValue = 0
-              if(threshold-.5>0){
-                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
-              }else if(threshold-.5<0){
-                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
-              }
-              currentSwing = swingValue
-              zeroValue.text(swingValue).attr("x",e.x)
-              zeroLabel.attr("x",e.x)
-              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
-              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
-              colorScale.domain([threshold-.5,threshold,threshold+.5])
-              d3.selectAll("circle")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                d3.select(this).attr("fill",colorScale(share))
-              })
+      //         var swingValue = 0
+      //         if(threshold-.5>0){
+      //           swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+      //         }else if(threshold-.5<0){
+      //           swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+      //         }
+      //         currentSwing = swingValue
+      //         zeroValue.text(swingValue).attr("x",e.x)
+      //         zeroLabel.attr("x",e.x)
+      //         var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+      //         var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+      //         colorScale.domain([threshold-.5,threshold,threshold+.5])
+      //         d3.selectAll("circle")
+      //         .each(function(d){
+      //           var share = d3.select(this).attr("gopShare")
+      //           d3.select(this).attr("fill",colorScale(share))
+      //         })
 
-              d3.selectAll(".district")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                if(d3.select(this).attr("fill")!="#fff"){
-                  d3.select(this).attr("fill",colorScale(share))
+      //         d3.selectAll(".district")
+      //         .each(function(d){
+      //           var share = d3.select(this).attr("gopShare")
+      //           if(d3.select(this).attr("fill")!="#fff"){
+      //             d3.select(this).attr("fill",colorScale(share))
 
-                }
-              })
+      //           }
+      //         })
        
 
-              demTally.text(dem)
-              repTally.text(rep)
-              d3.select(this).attr("cx",e.x)
-              zeroBar.attr("x",e.x)
-            })  
-            .on("end",function(){
-            })
-      )
+      //         demTally.text(dem)
+      //         repTally.text(rep)
+      //         d3.select(this).attr("cx",e.x)
+      //         zeroBar.attr("x",e.x)
+      //       })  
+      //       .on("end",function(){
+      //       })
+      // )
       var zeroValue = histoSvg.append("text").text("0").attr("text-anchor","middle")
         .attr("x",xScale(.5)-1).attr("y",padding*2-10).attr("cursor","pointer")
         .call(d3.drag()
@@ -383,11 +389,11 @@ var currentSwing = 0
                 swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
               }
               currentSwing = swingValue
-              zeroValue.text(swingValue).attr("x",e.x)
-              zeroLabel.attr("x",e.x)
+               zeroValue.text(swingValue).attr("x",e.x)
+              // zeroLabel.attr("x",e.x)
               var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
               var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
-              colorScale.domain([threshold-.5,threshold,threshold+.5])
+              colorScale.domain([threshold-.5,threshold-.1,threshold,threshold+.1,threshold+.5,])
               d3.selectAll("circle")
               .each(function(d){
                 var share = d3.select(this).attr("gopShare")
@@ -397,10 +403,10 @@ var currentSwing = 0
               d3.selectAll(".district")
               .each(function(d){
                 var share = d3.select(this).attr("gopShare")
-                if(d3.select(this).attr("fill")!="#fff"){
+                //if(d3.select(this).attr("fill")!="#fff"){
                   d3.select(this).attr("fill",colorScale(share))
 
-                }
+              //  }
               })
        
 
@@ -412,54 +418,54 @@ var currentSwing = 0
             .on("end",function(){
             })
       )
-      var zeroButton = histoSvg.append("circle")
-        .attr("cx",xScale(.5)).attr("cy",padding*2)
-        .attr("r",5)
-        .attr("class","dragCircle")
-        .attr("cursor","pointer")
-        .call(d3.drag()
-            .on("start",function(){
-            })  
-            .on("drag",function(e){
-              var threshold = xScale.invert(e.x)
+      // var zeroButton = histoSvg.append("circle")
+      //   .attr("cx",xScale(.5)).attr("cy",padding*2)
+      //   .attr("r",5)
+      //   .attr("class","dragCircle")
+      //   .attr("cursor","pointer")
+      //   .call(d3.drag()
+      //       .on("start",function(){
+      //       })  
+      //       .on("drag",function(e){
+      //         var threshold = xScale.invert(e.x)
 
-              var swingValue = 0
-              if(threshold-.5>0){
-                swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
-              }else if(threshold-.5<0){
-                swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
-              }
-              currentSwing = swingValue
-              zeroValue.text(swingValue).attr("x",e.x)
-              zeroLabel.attr("x",e.x)
-              d3.select(this).attr("cx",e.x)
-              var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
-              var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
-              colorScale.domain([threshold-.5,threshold,threshold+.5])
-              d3.selectAll("circle")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                d3.select(this).attr("fill",colorScale(share))
-              })
+      //         var swingValue = 0
+      //         if(threshold-.5>0){
+      //           swingValue = "+"+Math.abs(Math.round(threshold*100)-50)+"D"
+      //         }else if(threshold-.5<0){
+      //           swingValue ="+"+ Math.abs(Math.round(threshold*100)-50)+"R"
+      //         }
+      //         currentSwing = swingValue
+      //         zeroValue.text(swingValue).attr("x",e.x)
+      //         zeroLabel.attr("x",e.x)
+      //         d3.select(this).attr("cx",e.x)
+      //         var dem =data.filter(function(d){return d.uncontested!="1" && d.dem_share<threshold}).length
+      //         var rep = data.filter(function(d){return d.uncontested!="1" && d.gop_share>threshold}).length
+      //         colorScale.domain([threshold-.5,threshold,threshold+.5])
+      //         d3.selectAll("circle")
+      //         .each(function(d){
+      //           var share = d3.select(this).attr("gopShare")
+      //           d3.select(this).attr("fill",colorScale(share))
+      //         })
 
-              d3.selectAll(".district")
-              .each(function(d){
-                var share = d3.select(this).attr("gopShare")
-                if(d3.select(this).attr("fill")!="#fff"){
-                  d3.select(this).attr("fill",colorScale(share))
+      //         d3.selectAll(".district")
+      //         .each(function(d){
+      //           var share = d3.select(this).attr("gopShare")
+      //           if(d3.select(this).attr("fill")!="#fff"){
+      //             d3.select(this).attr("fill",colorScale(share))
 
-                }
-              })
+      //           }
+      //         })
        
 
-              demTally.text(dem)
-              repTally.text(rep)
-              d3.select(this).attr("cx",e.x)
-              zeroBar.attr("x",e.x)
-            })  
-            .on("end",function(){
-            })
-      )
+      //         demTally.text(dem)
+      //         repTally.text(rep)
+      //         d3.select(this).attr("cx",e.x)
+      //         zeroBar.attr("x",e.x)
+      //       })  
+      //       .on("end",function(){
+      //       })
+      // )
     }
 
 function drawKey(data){
